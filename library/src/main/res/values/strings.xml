@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">MaterialStepper</string>
+    <string name="ms_prev">PREV</string>
+    <string name="ms_next">NEXT</string>
+    <string name="ms_end">COMPLETE</string>
+    <string name="ms_continue">CONTINUE</string>
+</resources>
