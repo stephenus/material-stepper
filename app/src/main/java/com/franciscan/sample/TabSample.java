@@ -20,7 +20,7 @@ public class TabSample extends TabStepper {
 
         setErrorTimeout(1500);
         setLinear(linear);
-        setTitle("Tab Stepper <small>( " + (linear ? "" : "Non ") + "Linear)</small>");
+        setTitle("Tab Stepper <small>(" + (linear ? "" : "Non ") + "Linear)</small>");
 
         addStep(createFragment(new StepSample()));
         addStep(createFragment(new StepSample()));
