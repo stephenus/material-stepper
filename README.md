@@ -1,15 +1,15 @@
 # Material Stepper
 
+## Preview
+
+![textstepper](https://github.com/FrancisCan/MaterialStepper/blob/master/screenshot/text.png?raw=true)
+![textstepper](https://github.com/FrancisCan/MaterialStepper/blob/master/screenshot/progress.png?raw=true)
+![textstepper](https://github.com/FrancisCan/MaterialStepper/blob/master/screenshot/dots.png?raw=true)
+![textstepper](https://github.com/FrancisCan/MaterialStepper/blob/master/screenshot/tabs.png?raw=true)
+
 ## Use
 
-Extend one of this class
-
-| Class | Preview |
------------- | -------------
-| ```TextStepper``` | ![textstepper](https://github.com/FrancisCan/MaterialStepper/blob/master/screenshot/text.png?raw=true)  |
-| ```ProgressStepper```  |  ![textstepper](https://github.com/FrancisCan/MaterialStepper/blob/master/screenshot/progress.png?raw=true) |
-| ```DotsStepper```  | ![textstepper](https://github.com/FrancisCan/MaterialStepper/blob/master/screenshot/dots.png?raw=true) |
-|```TabStepper```  |![textstepper](https://github.com/FrancisCan/MaterialStepper/blob/master/screenshot/tabs.png?raw=true) |
+Extend one of this classes ```TextStepper```, ```ProgressStepper```, ```DotsStepper```, ```TabStepper```
 
 ```java
 public class TabSample extends TabStepper {
