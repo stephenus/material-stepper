@@ -9,7 +9,7 @@
 
 ## Use
 
-Extend one of this classes ```TextStepper```, ```ProgressStepper```, ```DotsStepper```, ```TabStepper```
+Extend one of this classes ```TextStepper```, ```ProgressStepper```, ```DotStepper```, ```TabStepper```
 
 ```java
 public class TabSample extends TabStepper {
