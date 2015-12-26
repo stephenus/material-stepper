@@ -124,7 +124,7 @@ public class BaseStyle extends AppCompatActivity implements Stepable {
 
         AbstractStep step = mSteps.getCurrent();
 
-        if (!step.nextIf()) {
+        if (!step.isOptional() && !step.nextIf()) {
             mErrorString = step.error();
             onError();
             return;

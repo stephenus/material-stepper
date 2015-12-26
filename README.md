@@ -25,6 +25,9 @@ public class TabSample extends TabStepper {
 
         // only TabStepper
         setLinear(true);
+        
+        // alternative tab style
+        setAlternativeTab(true);
 
         setTitle("Stepper Title");
 

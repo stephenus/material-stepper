@@ -63,7 +63,7 @@ public class DotStepper extends BaseNavigation {
                 public void run() {
                     mDots.setVisibility(View.VISIBLE);
                 }
-            }, 400);
+            }, 500);
         }
 
 

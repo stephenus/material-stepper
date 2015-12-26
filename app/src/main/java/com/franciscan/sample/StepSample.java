@@ -6,7 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.TextView;
 
 import com.github.franciscan.materialstepper.AbstractStep;
 
@@ -22,8 +21,6 @@ public class StepSample extends AbstractStep {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         View v = inflater.inflate(R.layout.step, container, false);
-        String text = "Step " + getArguments().getInt("position", 0);
-        ((TextView) v.findViewById(R.id.title)).setText(text);
         button = (Button) v.findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,8 +39,8 @@ public class StepSample extends AbstractStep {
     }
 
     @Override
-    public String optional() {
-        return "Optional " + getArguments().getInt("position", 0);
+    public boolean isOptional() {
+        return true;
     }
 
     @Override

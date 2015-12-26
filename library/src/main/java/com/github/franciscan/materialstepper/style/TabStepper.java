@@ -25,18 +25,25 @@ import com.github.franciscan.materialstepper.utils.LinearityChecker;
 public class TabStepper extends BasePager implements View.OnClickListener {
 
     protected TextView mError;
+
     // attributes
-    int unselected = Color.parseColor("#bdbdbd");
+    int unselected = Color.parseColor("#9e9e9e");
+
     // views
     private HorizontalScrollView mTabs;
     private LinearLayout mStepTabs;
     private boolean mLinear;
+    private boolean mTabAlternative;
     private ViewSwitcher mSwitch;
     private LinearityChecker mLinearity;
     private Button mContinue;
 
     protected void setLinear(boolean mLinear) {
         this.mLinear = mLinear;
+    }
+
+    protected void setAlternativeTab(boolean mTabAlternative) {
+        this.mTabAlternative = mTabAlternative;
     }
 
     @Override
@@ -77,7 +84,7 @@ public class TabStepper extends BasePager implements View.OnClickListener {
         if (mStepTabs.getChildCount() == 0) {
             while (i < mSteps.total()) {
                 AbstractStep step = mSteps.get(i);
-                mStepTabs.addView(createStepTab(i++, step.name(), step.optional()));
+                mStepTabs.addView(createStepTab(i++, step.name(), step.isOptional()));
             }
         }
 
@@ -96,8 +103,8 @@ public class TabStepper extends BasePager implements View.OnClickListener {
             color(done ? doneIcon : stepIcon, i == mSteps.current() || done);
 
             TextView text = (TextView) view.findViewById(R.id.title);
-            text.setTypeface(i == mSteps.current() ? Typeface.DEFAULT_BOLD : Typeface.DEFAULT);
-            view.findViewById(R.id.title).setAlpha(i == mSteps.current() ? 1 : 0.54f);
+            text.setTypeface(i == mSteps.current() || done ? Typeface.DEFAULT_BOLD : Typeface.DEFAULT);
+            view.findViewById(R.id.title).setAlpha(i == mSteps.current() || done ? 1 : 0.54f);
 
         }
 
@@ -112,27 +119,32 @@ public class TabStepper extends BasePager implements View.OnClickListener {
         if (mSteps.getCurrent().nextIf()) {
             mLinearity.setDone(mSteps.current() + 1);
             return true;
-        } else if (mLinear)
-            onError();
-        return false;
+        }
+        return mSteps.getCurrent().isOptional();
     }
 
-    private View createStepTab(final int position, String title, String optional) {
-        View view = getLayoutInflater().inflate(R.layout.step_tab, mStepTabs, false);
+    private View createStepTab(final int position, String title, boolean isOptional) {
+        View view = getLayoutInflater().inflate(mTabAlternative ? R.layout.step_tab_alternative : R.layout.step_tab, mStepTabs, false);
         ((TextView) view.findViewById(R.id.step)).setText(String.valueOf(position + 1));
+
+        if (isOptional)
+            view.findViewById(R.id.optional).setVisibility(View.VISIBLE);
 
         if (position == mSteps.total() - 1)
             view.findViewById(R.id.divider).setVisibility(View.GONE);
 
-        ((TextView) view.findViewById(R.id.title)).setText(Html.fromHtml("<b>" + title + "</b>" + (optional.isEmpty() ? "" : "<br><small><font color=#9e9e9e>" + optional + "</font></small>")));
+        ((TextView) view.findViewById(R.id.title)).setText(title);
+
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                if (position > mSteps.current())
+                boolean optional = mSteps.getCurrent().isOptional();
+
+                if (position != mSteps.current())
                     updateDoneCurrent();
 
-                if (!mLinear || mLinearity.beforeDone(position)) {
+                if (!mLinear || optional || mLinearity.beforeDone(position)) {
                     mSteps.current(position);
                     updateScrolling(position);
                 } else
@@ -154,7 +166,7 @@ public class TabStepper extends BasePager implements View.OnClickListener {
         View tab = mStepTabs.getChildAt(mSteps.current());
         boolean isNear = mSteps.current() == newPosition - 1 || mSteps.current() == newPosition + 1;
         mPager.setCurrentItem(mSteps.current(), isNear);
-        mTabs.smoothScrollTo(tab.getLeft() - 12, 0);
+        mTabs.smoothScrollTo(tab.getLeft() - 20, 0);
         onUpdate();
     }
 
@@ -180,6 +192,7 @@ public class TabStepper extends BasePager implements View.OnClickListener {
         if (updateDoneCurrent()) {
             onNext();
             updateScrolling(mSteps.current() + 1);
-        }
+        } else
+            onError();
     }
 }

@@ -7,6 +7,8 @@ public interface Nextable {
 
     boolean nextIf();
 
+    boolean isOptional();
+
     String error();
 
 }
