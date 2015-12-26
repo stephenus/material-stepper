@@ -41,19 +41,19 @@ public class StepSample extends AbstractStep {
     // step name
     @Override
     public String name() {
-        return "Tab " + getArguments().getInt("position", 0);
+        return "Step title";
     }
 
     // step optional title
     @Override
     public String optional() {
-        return "Optional " + getArguments().getInt("position", 0);
+        return "Optional subtitle";
     }
 
     // override only if step is limited by condition
     @Override
     public boolean nextIf() {
-        return i > 1;
+        return i > 5;
     }
 
     // error showed on change next step ( see nextIf )
