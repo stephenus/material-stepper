@@ -22,7 +22,10 @@ public class TabSample extends TabStepper {
         setColorPrimaryDark(Color.parseColor("#5d4037"));
 
         setErrorTimeout(1500);
-        setLinear(linear);
+
+        // only TabStepper
+        setLinear(true);
+
         setTitle("Stepper Title");
 
         addStep(new Step());
