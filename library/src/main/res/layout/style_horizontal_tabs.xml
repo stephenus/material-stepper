@@ -29,9 +29,11 @@
 
                 <LinearLayout
                     android:id="@+id/stepTabs"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal" />
+                    android:orientation="horizontal"
+                    android:paddingLeft="12dp"
+                    android:paddingRight="12dp" />
 
             </HorizontalScrollView>
 
@@ -49,13 +51,13 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:layout_alignParentBottom="true"
-        android:background="@android:color/white">
+        android:background="@color/ms_stepNavigationBackground">
 
         <RelativeLayout
             android:id="@+id/stepNavigation"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@android:color/white">
+            android:background="@color/ms_stepNavigationBackground">
 
             <Button
                 android:id="@+id/continueButton"

@@ -1,6 +1,5 @@
 package com.franciscan.sample;
 
-import android.graphics.Color;
 import android.os.Bundle;
 
 import com.github.franciscan.materialstepper.AbstractStep;
@@ -13,8 +12,8 @@ public class ProgressSample extends ProgressStepper {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        setColorPrimary(Color.parseColor("#009688"));
-        setColorPrimaryDark(Color.parseColor("#00796b"));
+        // setColorPrimary(Color.parseColor("#009688"));
+        // setColorPrimaryDark(Color.parseColor("#00796b"));
         setErrorTimeout(1500);
         setTitle("Progress Stepper");
 

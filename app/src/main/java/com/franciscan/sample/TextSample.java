@@ -1,6 +1,5 @@
 package com.franciscan.sample;
 
-import android.graphics.Color;
 import android.os.Bundle;
 
 import com.github.franciscan.materialstepper.AbstractStep;
@@ -13,8 +12,8 @@ public class TextSample extends TextStepper {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        setColorPrimary(Color.parseColor("#f44336"));
-        setColorPrimaryDark(Color.parseColor("#d32f2f"));
+        // setColorPrimary(Color.parseColor("#f44336"));
+        // setColorPrimaryDark(Color.parseColor("#d32f2f"));
         setErrorTimeout(1000);
         setTitle("Text Stepper");
 

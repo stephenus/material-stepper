@@ -1,6 +1,5 @@
 package com.franciscan.sample;
 
-import android.graphics.Color;
 import android.os.Bundle;
 
 import com.github.franciscan.materialstepper.AbstractStep;
@@ -13,8 +12,8 @@ public class TabSample extends TabStepper {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        setColorPrimary(Color.parseColor("#795548"));
-        setColorPrimaryDark(Color.parseColor("#5d4037"));
+        // setColorPrimary(Color.parseColor("#795548"));
+        // setColorPrimaryDark(Color.parseColor("#5d4037"));
 
         boolean linear = getIntent().getBooleanExtra("linear", false);
 

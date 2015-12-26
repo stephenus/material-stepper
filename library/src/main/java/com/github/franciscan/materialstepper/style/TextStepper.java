@@ -26,7 +26,7 @@ public class TextStepper extends BaseNavigation {
         init();
 
         mSwitch.setInAnimation(TextStepper.this, R.anim.in_from_top);
-        mSwitch.setOutAnimation(TextStepper.this, R.anim.out_to_bottom);
+        mSwitch.setOutAnimation(TextStepper.this, R.anim.out_to_top);
         mCounter = (TextView) findViewById(R.id.stepCounter);
 
         onUpdate();

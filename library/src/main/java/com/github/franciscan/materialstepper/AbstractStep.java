@@ -19,6 +19,12 @@ public abstract class AbstractStep extends Fragment implements Nextable {
 
     public abstract String name();
 
+    public String optional() {
+        return "";
+    }
+
+    ;
+
     @Override
     public boolean nextIf() {
         return true;

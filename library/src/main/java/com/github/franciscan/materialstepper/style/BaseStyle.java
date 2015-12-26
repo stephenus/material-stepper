@@ -124,6 +124,12 @@ public class BaseStyle extends AppCompatActivity implements Stepable {
 
         AbstractStep step = mSteps.getCurrent();
 
+        if (!step.nextIf()) {
+            mErrorString = step.error();
+            onError();
+            return;
+        }
+
         if (mSteps.current() == mSteps.total() - 1) {
             Intent intent = new Intent();
             intent.putExtras(mExtras);
@@ -139,12 +145,6 @@ public class BaseStyle extends AppCompatActivity implements Stepable {
 
         if (mSteps.current() >= mSteps.total() - 1)
             return;
-
-        if (!step.nextIf()) {
-            mErrorString = step.error();
-            onError();
-            return;
-        }
 
         mSteps.current(mSteps.current() + 1);
         onUpdate();

@@ -15,6 +15,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.ViewSwitcher;
 
+import com.github.franciscan.materialstepper.AbstractStep;
 import com.github.franciscan.materialstepper.R;
 import com.github.franciscan.materialstepper.utils.LinearityChecker;
 
@@ -75,7 +76,8 @@ public class TabStepper extends BasePager implements View.OnClickListener {
 
         if (mStepTabs.getChildCount() == 0) {
             while (i < mSteps.total()) {
-                mStepTabs.addView(createStepTab(i, mSteps.get(i++).name()));
+                AbstractStep step = mSteps.get(i);
+                mStepTabs.addView(createStepTab(i++, step.name(), step.optional()));
             }
         }
 
@@ -99,7 +101,6 @@ public class TabStepper extends BasePager implements View.OnClickListener {
 
         }
 
-
         if (mSteps.current() == mSteps.total() - 1)
             mContinue.setText(R.string.ms_end);
         else
@@ -111,20 +112,25 @@ public class TabStepper extends BasePager implements View.OnClickListener {
         if (mSteps.getCurrent().nextIf()) {
             mLinearity.setDone(mSteps.current() + 1);
             return true;
-        } else
+        } else if (mLinear)
             onError();
         return false;
     }
 
-    private View createStepTab(final int position, String title) {
+    private View createStepTab(final int position, String title, String optional) {
         View view = getLayoutInflater().inflate(R.layout.step_tab, mStepTabs, false);
         ((TextView) view.findViewById(R.id.step)).setText(String.valueOf(position + 1));
-        ((TextView) view.findViewById(R.id.title)).setText(title);
+
+        if (position == mSteps.total() - 1)
+            view.findViewById(R.id.divider).setVisibility(View.GONE);
+
+        ((TextView) view.findViewById(R.id.title)).setText(Html.fromHtml("<b>" + title + "</b>" + (optional.isEmpty() ? "" : "<br><small><font color=#9e9e9e>" + optional + "</font></small>")));
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                updateDoneCurrent();
+                if (position > mSteps.current())
+                    updateDoneCurrent();
 
                 if (!mLinear || mLinearity.beforeDone(position)) {
                     mSteps.current(position);
@@ -147,9 +153,8 @@ public class TabStepper extends BasePager implements View.OnClickListener {
     private void updateScrolling(int newPosition) {
         View tab = mStepTabs.getChildAt(mSteps.current());
         boolean isNear = mSteps.current() == newPosition - 1 || mSteps.current() == newPosition + 1;
-
         mPager.setCurrentItem(mSteps.current(), isNear);
-        mTabs.smoothScrollBy(tab.getLeft() - tab.getWidth(), 0);
+        mTabs.smoothScrollTo(tab.getLeft() - 12, 0);
         onUpdate();
     }
 
@@ -160,7 +165,6 @@ public class TabStepper extends BasePager implements View.OnClickListener {
 
         if (mSwitch.getDisplayedChild() == 0)
             mSwitch.setDisplayedChild(1);
-
 
         new Handler().postDelayed(new Runnable() {
             @Override

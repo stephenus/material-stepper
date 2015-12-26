@@ -1,6 +1,5 @@
 package com.franciscan.sample;
 
-import android.graphics.Color;
 import android.os.Bundle;
 
 import com.github.franciscan.materialstepper.AbstractStep;
@@ -13,8 +12,8 @@ public class DotsSample extends DotStepper {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        setColorPrimary(Color.parseColor("#ff5722"));
-        setColorPrimaryDark(Color.parseColor("#e64a19"));
+        // setColorPrimary(Color.parseColor("#ff5722"));
+        // setColorPrimaryDark(Color.parseColor("#e64a19"));
         setErrorTimeout(1500);
         setTitle("Dots Stepper");
 

@@ -22,13 +22,13 @@ public class StepSample extends AbstractStep {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         View v = inflater.inflate(R.layout.step, container, false);
-        ((TextView) v.findViewById(R.id.title)).setText("Step " + getArguments().getInt("position", 0));
+        String text = "Step " + getArguments().getInt("position", 0);
+        ((TextView) v.findViewById(R.id.title)).setText(text);
         button = (Button) v.findViewById(R.id.button);
-        button.setText(Html.fromHtml("Count Click <b>0</b>"));
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                button.setText(Html.fromHtml("Click <b>" + (++i) + "</b>"));
+                button.setText(Html.fromHtml("Tap <b>" + (i++) + "</b>"));
                 mStepper.getExtras().putInt("Click", i);
             }
         });
@@ -42,12 +42,17 @@ public class StepSample extends AbstractStep {
     }
 
     @Override
+    public String optional() {
+        return "Optional " + getArguments().getInt("position", 0);
+    }
+
+    @Override
     public boolean nextIf() {
         return i > 1;
     }
 
     @Override
     public String error() {
-        return "<b>you must click 2 times or more!</b> <small>condition!</small>";
+        return "<b>You must click!</b> <small>this is the condition!</small>";
     }
 }

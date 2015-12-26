@@ -5,6 +5,7 @@ import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
@@ -48,12 +49,23 @@ public class DotStepper extends BaseNavigation {
 
         int i = 0;
 
-        if (mDots.getChildCount() == 0)
+        if (mDots.getChildCount() == 0) {
+
             while (i++ < mSteps.total()) {
                 View view = getLayoutInflater().inflate(R.layout.dot, mDots, false);
                 view.startAnimation(scale_out);
                 mDots.addView(view);
             }
+
+            // prevent see animation at start
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    mDots.setVisibility(View.VISIBLE);
+                }
+            }, 400);
+        }
+
 
         for (i = 0; i < mDots.getChildCount(); i++)
 
