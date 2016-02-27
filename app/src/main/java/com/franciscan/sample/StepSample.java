@@ -40,7 +40,7 @@ public class StepSample extends AbstractStep {
 
     @Override
     public boolean isOptional() {
-        return true;
+        return false;
     }
 
     @Override

@@ -3,7 +3,7 @@ package com.github.franciscan.materialstepper.utils;
 import java.util.ArrayList;
 
 /**
- * Created by Francesco Cannizzaro on 24/12/2015.
+ * @author Francesco Cannizzaro (fcannizzaro).
  */
 public class LinearityChecker {
 

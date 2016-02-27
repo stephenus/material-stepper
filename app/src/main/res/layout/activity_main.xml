@@ -72,7 +72,6 @@
         android:layout_marginBottom="8dp"
         android:fontFamily="sans-serif-condesed"
         android:padding="18dp"
-        android:text="Tabs Stepper"
-        android:textSize="16sp" />
+        android:text="Tabs Stepper" />
 
 </LinearLayout>

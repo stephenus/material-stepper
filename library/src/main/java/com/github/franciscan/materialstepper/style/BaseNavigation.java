@@ -10,7 +10,7 @@ import com.github.franciscan.materialstepper.R;
 import com.github.franciscan.materialstepper.utils.TintUtils;
 
 /**
- * Created by Francesco Cannizzaro on 24/12/2015.
+ * @author Francesco Cannizzaro (fcannizzaro).
  */
 public class BaseNavigation extends BasePager implements View.OnClickListener {
 

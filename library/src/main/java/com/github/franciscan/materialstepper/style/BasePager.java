@@ -7,11 +7,12 @@ import android.view.View;
 import com.github.franciscan.materialstepper.AbstractStep;
 import com.github.franciscan.materialstepper.R;
 import com.github.franciscan.materialstepper.adapter.PageAdapter;
+import com.github.franciscan.materialstepper.utils.PageChangeAdapter;
 
 import java.util.List;
 
 /**
- * Created by Francesco Cannizzaro on 24/12/2015.
+ * @author Francesco Cannizzaro (fcannizzaro).
  */
 public class BasePager extends BaseStyle {
 
@@ -28,6 +29,12 @@ public class BasePager extends BaseStyle {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
                 return true;
+            }
+        });
+        mPager.addOnPageChangeListener(new PageChangeAdapter() {
+            @Override
+            public void onPageSelected(int position) {
+                mSteps.get(position).onStepVisible();
             }
         });
     }

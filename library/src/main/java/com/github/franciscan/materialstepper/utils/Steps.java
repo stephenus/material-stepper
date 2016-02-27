@@ -7,7 +7,7 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * Created by Francesco Cannizzaro on 24/12/2015.
+ * @author Francesco Cannizzaro (fcannizzaro).
  */
 public class Steps {
 

@@ -1,13 +1,15 @@
 package com.github.franciscan.materialstepper.interfaces;
 
 /**
- * Created by Francesco Cannizzaro on 23/12/2015.
+ * @author Francesco Cannizzaro (fcannizzaro).
  */
 public interface Nextable {
 
     boolean nextIf();
 
     boolean isOptional();
+
+    void onStepVisible();
 
     String error();
 

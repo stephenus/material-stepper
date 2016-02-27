@@ -15,7 +15,7 @@ import android.widget.LinearLayout;
 import com.github.franciscan.materialstepper.R;
 
 /**
- * Created by Francesco Cannizzaro on 24/12/2015.
+ * @author Francesco Cannizzaro (fcannizzaro).
  */
 public class DotStepper extends BaseNavigation {
 

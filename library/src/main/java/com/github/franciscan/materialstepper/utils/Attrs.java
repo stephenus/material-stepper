@@ -7,7 +7,7 @@ import android.util.TypedValue;
 import com.github.franciscan.materialstepper.R;
 
 /**
- * Created by Francesco Cannizzaro on 22/12/2015.
+ * @author Francesco Cannizzaro (fcannizzaro).
  */
 public class Attrs {
 

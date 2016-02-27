@@ -1,7 +1,7 @@
 package com.github.franciscan.materialstepper.interfaces;
 
 /**
- * Created by Francesco Cannizzaro on 24/12/2015.
+ * @author Francesco Cannizzaro (fcannizzaro).
  */
 public interface Stepable {
     void onPrevious();

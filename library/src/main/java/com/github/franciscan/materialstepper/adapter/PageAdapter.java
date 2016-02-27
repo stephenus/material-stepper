@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Francesco Cannizzaro on 22/12/2015.
+ * @author Francesco Cannizzaro (fcannizzaro).
  */
 
 public class PageAdapter extends FragmentPagerAdapter {

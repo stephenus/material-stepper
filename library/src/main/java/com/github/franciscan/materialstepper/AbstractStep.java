@@ -25,6 +25,10 @@ public abstract class AbstractStep extends Fragment implements Nextable {
     }
 
     @Override
+    public void onStepVisible() {
+    }
+
+    @Override
     public boolean nextIf() {
         return true;
     }

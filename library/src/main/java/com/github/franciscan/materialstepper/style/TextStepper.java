@@ -6,7 +6,7 @@ import android.widget.TextView;
 import com.github.franciscan.materialstepper.R;
 
 /**
- * Created by Francesco Cannizzaro on 24/12/2015.
+ * @author Francesco Cannizzaro (fcannizzaro).
  */
 public class TextStepper extends BaseNavigation {
 

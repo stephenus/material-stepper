@@ -6,7 +6,7 @@ import android.support.v4.graphics.drawable.DrawableCompat;
 import android.widget.TextView;
 
 /**
- * Created by Francesco Cannizzaro on 23/12/2015.
+ * @author Francesco Cannizzaro (fcannizzaro).
  */
 public class TintUtils {
 
