@@ -29,7 +29,15 @@ dependencies {
 ![progress](https://github.com/FrancisCan/MaterialStepper/blob/master/screenshot/progress.png?raw=true)
 ![dots](https://github.com/FrancisCan/MaterialStepper/blob/master/screenshot/dots.png?raw=true)
 ![tabs](https://github.com/FrancisCan/MaterialStepper/blob/master/screenshot/tabs.png?raw=true)
-![tabs alternative](https://github.com/FrancisCan/MaterialStepper/blob/master/screenshot/tabs_classic.png?raw=true)
+
+#### Tab Style
+ - classic
+
+ ![classic](https://github.com/FrancisCan/MaterialStepper/blob/master/screenshot/classic_tab.png?raw=true)
+
+ - alternative
+ 
+ ![classic](https://github.com/FrancisCan/MaterialStepper/blob/master/screenshot/alternative_tab.png?raw=true)
 
 ## Use
 
