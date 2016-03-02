@@ -1,5 +1,28 @@
 # Material Stepper
 
+[![](https://jitpack.io/v/fcannizzaro/material-stepper.svg)](https://jitpack.io/#fcannizzaro/material-stepper)
+
+## Dependency
+
+Add it in your root build.gradle at the end of repositories:
+
+```gradle
+allprojects {
+    repositories {
+		...
+		maven { url "https://jitpack.io" }
+	}
+}
+```
+
+Add the dependency
+
+```gradle
+dependencies {
+    compile 'com.github.fcannizzaro:material-stepper:1.0.2'
+}
+```
+
 ## Preview
 
 ![textstepper](https://github.com/FrancisCan/MaterialStepper/blob/master/screenshot/text.png?raw=true)
