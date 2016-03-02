@@ -33,11 +33,11 @@ dependencies {
 #### Tab Style
  - classic
 
- ![classic](https://github.com/FrancisCan/MaterialStepper/blob/master/screenshot/classic_tab.png?raw=true)
+ ![classic](https://github.com/FrancisCan/MaterialStepper/blob/master/screenshot/classic.png?raw=true)
 
  - alternative
- 
- ![classic](https://github.com/FrancisCan/MaterialStepper/blob/master/screenshot/alternative_tab.png?raw=true)
+
+ ![alternative](https://github.com/FrancisCan/MaterialStepper/blob/master/screenshot/alternative.png?raw=true)
 
 ## Use
 
