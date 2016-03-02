@@ -9,7 +9,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    Button tabs, progress, text, dots, tabsNL;
+    Button tabs, progress, text, dots, tabsNL, tabClassic;
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -29,12 +29,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         tabs = (Button) findViewById(R.id.tabsL);
         tabsNL = (Button) findViewById(R.id.tabs);
+        tabClassic = (Button) findViewById(R.id.tabClassic);
         text = (Button) findViewById(R.id.text);
         progress = (Button) findViewById(R.id.progress);
         dots = (Button) findViewById(R.id.dots);
 
         tabs.setOnClickListener(this);
         tabsNL.setOnClickListener(this);
+        tabClassic.setOnClickListener(this);
         text.setOnClickListener(this);
         progress.setOnClickListener(this);
         dots.setOnClickListener(this);
@@ -54,6 +56,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             intent = new Intent(this, TextSample.class);
         else if (view == dots)
             intent = new Intent(this, DotsSample.class);
+        else if (view == tabClassic)
+            intent = new Intent(this, TabClassicSample.class);
         else if (view == tabs) {
             intent = new Intent(this, TabSample.class);
             intent.putExtra("linear", true);

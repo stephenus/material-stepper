@@ -5,19 +5,17 @@ import android.os.Bundle;
 import com.github.fcannizzaro.materialstepper.AbstractStep;
 import com.github.fcannizzaro.materialstepper.style.TabStepper;
 
-public class TabSample extends TabStepper {
+public class TabClassicSample extends TabStepper {
 
     private int i = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        boolean linear = getIntent().getBooleanExtra("linear", false);
-
         setErrorTimeout(1500);
-        setLinear(linear);
-        setTitle("Tab Stepper <small>(" + (linear ? "" : "Non ") + "Linear)</small>");
-        setAlternativeTab(true);
+        setLinear(false);
+        setTitle("Tab Stepper <small>(Classic Tab) </small>");
+        setAlternativeTab(false);
 
         addStep(createFragment(new StepSample()));
         addStep(createFragment(new StepSample()));

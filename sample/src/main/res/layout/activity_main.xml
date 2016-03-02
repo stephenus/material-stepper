@@ -72,6 +72,15 @@
         android:layout_marginBottom="8dp"
         android:fontFamily="sans-serif-condesed"
         android:padding="18dp"
-        android:text="Tabs Stepper" />
+        android:text="Tabs Stepper (Alternative)" />
+
+    <Button
+        android:id="@+id/tabClassic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="sans-serif-condesed"
+        android:padding="18dp"
+        android:text="Tabs Stepper (Classic)" />
 
 </LinearLayout>

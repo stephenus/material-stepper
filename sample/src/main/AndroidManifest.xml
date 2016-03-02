@@ -16,6 +16,7 @@
             </intent-filter>
         </activity>
         <activity android:name="com.fcannizzaro.sample.TabSample" />
+        <activity android:name="com.fcannizzaro.sample.TabClassicSample" />
         <activity android:name="com.fcannizzaro.sample.TextSample" />
         <activity android:name="com.fcannizzaro.sample.DotsSample" />
         <activity android:name="com.fcannizzaro.sample.ProgressSample" />

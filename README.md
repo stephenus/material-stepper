@@ -25,10 +25,11 @@ dependencies {
 
 ## Preview
 
-![textstepper](https://github.com/FrancisCan/MaterialStepper/blob/master/screenshot/text.png?raw=true)
-![textstepper](https://github.com/FrancisCan/MaterialStepper/blob/master/screenshot/progress.png?raw=true)
-![textstepper](https://github.com/FrancisCan/MaterialStepper/blob/master/screenshot/dots.png?raw=true)
-![textstepper](https://github.com/FrancisCan/MaterialStepper/blob/master/screenshot/tabs.png?raw=true)
+![text](https://github.com/FrancisCan/MaterialStepper/blob/master/screenshot/text.png?raw=true)
+![progress](https://github.com/FrancisCan/MaterialStepper/blob/master/screenshot/progress.png?raw=true)
+![dots](https://github.com/FrancisCan/MaterialStepper/blob/master/screenshot/dots.png?raw=true)
+![tabs](https://github.com/FrancisCan/MaterialStepper/blob/master/screenshot/tabs.png?raw=true)
+![tabs alternative](https://github.com/FrancisCan/MaterialStepper/blob/master/screenshot/tabs_classic.png?raw=true)
 
 ## Use
 
@@ -49,7 +50,7 @@ public class TabSample extends TabStepper {
         // only TabStepper
         setLinear(true);
         
-        // alternative tab style
+        // alternative tab style (see screenshot)
         setAlternativeTab(true);
 
         setTitle("Stepper Title");
