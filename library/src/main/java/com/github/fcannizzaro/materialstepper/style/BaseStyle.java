@@ -92,8 +92,6 @@ public class BaseStyle extends AppCompatActivity implements Stepable {
 
     protected void applyTheme() {
 
-        overridePendingTransition(R.anim.in_from_bottom, R.anim.out_to_bottom);
-
         findColors();
 
         if (getSupportActionBar() != null) {
