@@ -29,6 +29,7 @@ public class BaseNavigation extends BasePager implements View.OnClickListener {
         mError = (TextView) findViewById(R.id.stepError);
         mSwitch = (ViewSwitcher) findViewById(R.id.stepSwitcher);
 
+        assert mSwitch != null;
         mSwitch.setDisplayedChild(0);
         mSwitch.setInAnimation(BaseNavigation.this, R.anim.in_from_bottom);
         mSwitch.setOutAnimation(BaseNavigation.this, R.anim.out_to_bottom);

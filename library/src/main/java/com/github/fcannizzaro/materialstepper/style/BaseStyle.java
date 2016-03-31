@@ -80,13 +80,13 @@ public class BaseStyle extends AppCompatActivity implements Stepable {
             primaryColor = AttrUtils.getPrimary(this);
 
         if (primaryColor == 0)
-            primaryColor = ContextCompat.getColor(this, R.color.ms_colorPrimary);
+            primaryColor = ContextCompat.getColor(this, R.color.material_stepper_global);
 
         if (primaryColorDark == 0)
             primaryColorDark = AttrUtils.getPrimaryDark(this);
 
         if (primaryColorDark == 0)
-            primaryColorDark = ContextCompat.getColor(this, R.color.ms_colorPrimaryDark);
+            primaryColorDark = ContextCompat.getColor(this, R.color.material_stepper_global_dark);
 
     }
 
@@ -104,7 +104,7 @@ public class BaseStyle extends AppCompatActivity implements Stepable {
 
         }
 
-        tintColor = ContextCompat.getColor(this, R.color.ms_stepNavigationColor);
+        tintColor = ContextCompat.getColor(this, R.color.material_stepper_bottom_bar_text);
 
     }
 
@@ -132,20 +132,19 @@ public class BaseStyle extends AppCompatActivity implements Stepable {
             Intent intent = new Intent();
             intent.putExtras(mExtras);
             setResult(1, intent);
-            new Handler().postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    finish();
-                }
-            }, 1500);
+            onComplete();
             return;
         }
 
-        if (mSteps.current() >= mSteps.total() - 1)
+        if (mSteps.current() > mSteps.total() - 1)
             return;
 
         mSteps.current(mSteps.current() + 1);
         onUpdate();
+    }
+
+    public void onComplete() {
+        // to be redefined
     }
 
     @Override

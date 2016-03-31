@@ -26,6 +26,7 @@ public class ProgressStepper extends BaseNavigation {
         init();
 
         mProgress = (ProgressBar) findViewById(R.id.stepProgress);
+        assert mProgress != null;
         mProgress.getProgressDrawable().setColorFilter(primaryColor, PorterDuff.Mode.SRC_ATOP);
 
         onUpdate();

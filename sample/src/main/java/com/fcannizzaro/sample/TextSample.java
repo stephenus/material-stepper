@@ -33,4 +33,9 @@ public class TextSample extends TextStepper {
         return fragment;
     }
 
+    @Override
+    public void onComplete() {
+        super.onComplete();
+        System.out.println("completed");
+    }
 }

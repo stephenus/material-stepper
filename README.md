@@ -19,7 +19,7 @@ Add the dependency
 
 ```gradle
 dependencies {
-    compile 'com.github.fcannizzaro:material-stepper:1.0.2'
+    compile 'com.github.fcannizzaro:material-stepper:1.0.4'
 }
 ```
 
@@ -69,6 +69,13 @@ public class TabSample extends TabStepper {
 
         super.onCreate(savedInstanceState);
     }
+
+    // called when 'complete' button is pressed
+    @Override
+    public void onComplete() {
+        System.out.println("completed");
+    }
+
 ```
 Extend ```AbstractStep```
 ```java
@@ -99,6 +106,13 @@ public class StepSample extends AbstractStep {
     public String error() {
         return "<b>Condition</b>";
     }
+
+    // do something when step is visible
+    @Override
+    public void onStepVisible() {
+        super.onStepVisible();
+    }
+
 }
 ```
  Save data returned in ```onActivityResult```

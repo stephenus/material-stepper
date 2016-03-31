@@ -12,10 +12,13 @@ public class TextStepper extends BaseNavigation {
 
     // views
     protected TextView mCounter;
+    private String mText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        mText = getString(R.string.ms_text_step);
 
         applyTheme();
 
@@ -32,10 +35,12 @@ public class TextStepper extends BaseNavigation {
         onUpdate();
     }
 
+
     @Override
     public void onUpdate() {
         super.onUpdate();
-        mCounter.setText(String.format("Step %d of %d", mSteps.current() + 1, mSteps.total()));
+        int next = mSteps.current() < mSteps.total() - 1 ? mSteps.current() + 1 : mSteps.current();
+        mCounter.setText(mText.replace("$current", String.valueOf(next)).replace("$total", String.valueOf(mSteps.total())));
     }
 
 }

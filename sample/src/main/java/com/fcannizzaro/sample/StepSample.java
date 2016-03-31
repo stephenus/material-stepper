@@ -34,6 +34,12 @@ public class StepSample extends AbstractStep {
     }
 
     @Override
+    public void onStepVisible() {
+        super.onStepVisible();
+        // do something
+    }
+
+    @Override
     public String name() {
         return "Tab " + getArguments().getInt("position", 0);
     }

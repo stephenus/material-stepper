@@ -64,6 +64,7 @@ public class TabStepper extends BasePager implements View.OnClickListener {
         mError = (TextView) findViewById(R.id.stepError);
 
         mContinue = (Button) findViewById(R.id.continueButton);
+        assert mContinue != null;
         mContinue.setTextColor(primaryColor);
         mContinue.setOnClickListener(this);
 

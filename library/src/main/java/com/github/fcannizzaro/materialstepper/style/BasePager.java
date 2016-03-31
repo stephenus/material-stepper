@@ -24,6 +24,7 @@ public class BasePager extends BaseStyle {
 
     protected void init() {
         mPager = (ViewPager) findViewById(R.id.stepPager);
+        assert mPager != null;
         mPager.setAdapter(mPagerAdapter);
         mPager.setOnTouchListener(new View.OnTouchListener() {
             @Override

@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="-3dp"
-        android:background="@color/ms_stepNavigationBackground">
+        android:background="@color/material_stepper_top_bar">
 
         <RelativeLayout
             android:id="@+id/navigation"
@@ -33,7 +33,7 @@
                 android:drawableStart="@drawable/ic_keyboard_arrow_left_black_24dp"
                 android:padding="16dp"
                 android:text="@string/ms_prev"
-                android:textColor="@color/ms_stepNavigationColor"
+                android:textColor="@color/material_stepper_bottom_bar_text"
                 android:textSize="16sp" />
 
             <LinearLayout
@@ -55,8 +55,8 @@
                 android:drawableRight="@drawable/ic_keyboard_arrow_right_black_24dp"
                 android:padding="16dp"
                 android:text="@string/ms_next"
-                android:textColor="@color/ms_stepNavigationColor"
-                android:textSize="16sp" />
+                android:textColor="@color/material_stepper_bottom_bar_text"
+                android:textSize="@dimen/material_stepper_bottombar_font" />
 
             <TextView
                 android:id="@+id/stepEnd"
@@ -69,8 +69,8 @@
                 android:layout_marginRight="8dp"
                 android:padding="16dp"
                 android:text="@string/ms_end"
-                android:textColor="@color/ms_stepNavigationColor"
-                android:textSize="16sp"
+                android:textColor="@color/material_stepper_bottom_bar_text"
+                android:textSize="@dimen/material_stepper_bottombar_font"
                 android:visibility="gone" />
 
         </RelativeLayout>
@@ -79,7 +79,7 @@
             android:id="@+id/stepError"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/ms_errorColor"
+            android:background="@color/material_stepper_error"
             android:ellipsize="end"
             android:fontFamily="sans-serif"
             android:gravity="center_vertical"
@@ -89,7 +89,7 @@
             android:paddingTop="16dp"
             android:singleLine="true"
             android:textColor="#fff"
-            android:textSize="16sp" />
+            android:textSize="@dimen/material_stepper_bottombar_font" />
 
     </ViewSwitcher>
 
