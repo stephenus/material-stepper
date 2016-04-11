@@ -19,7 +19,7 @@ Add the dependency
 
 ```gradle
 dependencies {
-    compile 'com.github.fcannizzaro:material-stepper:1.0.5'
+    compile 'com.github.fcannizzaro:material-stepper:1.0.6'
 }
 ```
 
@@ -89,10 +89,16 @@ public class StepSample extends AbstractStep {
         return "Step title";
     }
 
-    // step optional title
+    // step optional title (default: "Optional")
     @Override
     public String optional() {
         return "Optional subtitle";
+    }
+    
+    // set step optional or not (default: false)
+    @Override
+    public boolean isOptional() {
+        return true;
     }
 
     // override only if step is limited by condition

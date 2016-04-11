@@ -46,7 +46,12 @@ public class StepSample extends AbstractStep {
 
     @Override
     public boolean isOptional() {
-        return false;
+        return true;
+    }
+
+    @Override
+    public String optional() {
+        return "You can skip";
     }
 
     @Override

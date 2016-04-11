@@ -17,6 +17,11 @@ public abstract class AbstractStep extends Fragment implements Nextable {
         return this;
     }
 
+    @Override
+    public String optional() {
+        return "Optional";
+    }
+
     public abstract String name();
 
     @Override

@@ -85,7 +85,7 @@ public class TabStepper extends BasePager implements View.OnClickListener {
         if (mStepTabs.getChildCount() == 0) {
             while (i < mSteps.total()) {
                 AbstractStep step = mSteps.get(i);
-                mStepTabs.addView(createStepTab(i++, step.name(), step.isOptional()));
+                mStepTabs.addView(createStepTab(i++, step.name(), step.isOptional(), step.optional()));
             }
         }
 
@@ -124,12 +124,14 @@ public class TabStepper extends BasePager implements View.OnClickListener {
         return mSteps.getCurrent().isOptional();
     }
 
-    private View createStepTab(final int position, String title, boolean isOptional) {
+    private View createStepTab(final int position, String title, boolean isOptional, String optionalStr) {
         View view = getLayoutInflater().inflate(mTabAlternative ? R.layout.step_tab_alternative : R.layout.step_tab, mStepTabs, false);
         ((TextView) view.findViewById(R.id.step)).setText(String.valueOf(position + 1));
 
-        if (isOptional)
+        if (isOptional) {
             view.findViewById(R.id.optional).setVisibility(View.VISIBLE);
+            ((TextView) view.findViewById(R.id.optional)).setText(optionalStr);
+        }
 
         if (position == mSteps.total() - 1)
             view.findViewById(R.id.divider).setVisibility(View.GONE);
