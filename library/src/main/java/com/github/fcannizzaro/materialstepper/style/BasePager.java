@@ -32,6 +32,7 @@ public class BasePager extends BaseStyle {
                 return true;
             }
         });
+        mSteps.get(0).onStepVisible();
         mPager.addOnPageChangeListener(new PageChangeAdapter() {
             @Override
             public void onPageSelected(int position) {

@@ -26,7 +26,8 @@ public class StepSample extends AbstractStep {
             @Override
             public void onClick(View view) {
                 button.setText(Html.fromHtml("Tap <b>" + (i++) + "</b>"));
-                mStepper.getExtras().putInt("Click", i);
+                if (mStepper != null)
+                    mStepper.getExtras().putInt("Click", i);
             }
         });
 
@@ -36,7 +37,6 @@ public class StepSample extends AbstractStep {
     @Override
     public void onStepVisible() {
         super.onStepVisible();
-        // do something
     }
 
     @Override
