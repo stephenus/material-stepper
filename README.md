@@ -136,7 +136,6 @@ Bundle data = mStepper.getExtras();
 
 Overwrite these strings for support multilanguage / custom titles
 ```xml
-<string name="app_name">MaterialStepper</string>
 <string name="ms_prev">PREV</string>
 <string name="ms_next">NEXT</string>
 <string name="ms_end">COMPLETE</string>
