@@ -19,7 +19,7 @@ Add the dependency
 
 ```gradle
 dependencies {
-    compile 'com.github.fcannizzaro:material-stepper:1.0.7'
+    compile 'com.github.fcannizzaro:material-stepper:1.0.8'
 }
 ```
 
@@ -55,8 +55,16 @@ public class TabSample extends TabStepper {
 
         setErrorTimeout(1500);
 
-        // only TabStepper
+        // --- only TabStepper ---
+        
+        // set linear stepper or not
         setLinear(true);
+
+        // show a "previous" button in tab navigation
+        showPreviousButton()
+        
+        // disable touch event on tab
+        disabledTouch();
         
         // alternative tab style (see screenshot)
         setAlternativeTab(true);
@@ -124,4 +132,15 @@ public class StepSample extends AbstractStep {
  Save data returned in ```onActivityResult```
 ```java
 Bundle data = mStepper.getExtras();
+```
+
+Overwrite these strings for support multilanguage / custom titles
+```xml
+<string name="app_name">MaterialStepper</string>
+<string name="ms_prev">PREV</string>
+<string name="ms_next">NEXT</string>
+<string name="ms_end">COMPLETE</string>
+<string name="ms_continue">CONTINUE</string>
+<string name="ms_optional">Optional</string>
+<string name="ms_text_step">Step $current of $total</string>
 ```

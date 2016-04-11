@@ -33,13 +33,24 @@ public class TabStepper extends BasePager implements View.OnClickListener {
     private HorizontalScrollView mTabs;
     private LinearLayout mStepTabs;
     private boolean mLinear;
+    private boolean showPrevButton = false;
+    private boolean disabledTouch = false;
     private boolean mTabAlternative;
     private ViewSwitcher mSwitch;
     private LinearityChecker mLinearity;
     private Button mContinue;
+    private TextView mPreviousButton;
 
     protected void setLinear(boolean mLinear) {
         this.mLinear = mLinear;
+    }
+
+    protected void disabledTouch() {
+        this.disabledTouch = true;
+    }
+
+    protected void showPreviousButton() {
+        this.showPrevButton = true;
     }
 
     protected void setAlternativeTab(boolean mTabAlternative) {
@@ -62,6 +73,7 @@ public class TabStepper extends BasePager implements View.OnClickListener {
         mStepTabs = (LinearLayout) mTabs.findViewById(R.id.stepTabs);
         mSwitch = (ViewSwitcher) findViewById(R.id.stepSwitcher);
         mError = (TextView) findViewById(R.id.stepError);
+        mPreviousButton = (TextView) findViewById(R.id.stepPrev);
 
         mContinue = (Button) findViewById(R.id.continueButton);
         assert mContinue != null;
@@ -73,6 +85,16 @@ public class TabStepper extends BasePager implements View.OnClickListener {
         mSwitch.setOutAnimation(TabStepper.this, R.anim.out_to_bottom);
 
         mLinearity = new LinearityChecker(mSteps.total());
+
+        if (!showPrevButton)
+            mPreviousButton.setVisibility(View.GONE);
+
+        mPreviousButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onPrevious();
+            }
+        });
 
         onUpdate();
     }
@@ -107,6 +129,8 @@ public class TabStepper extends BasePager implements View.OnClickListener {
             text.setTypeface(i == mSteps.current() || done ? Typeface.DEFAULT_BOLD : Typeface.DEFAULT);
             view.findViewById(R.id.title).setAlpha(i == mSteps.current() || done ? 1 : 0.54f);
 
+            mPreviousButton.setVisibility(showPrevButton && mSteps.current() > 0 ? View.VISIBLE : View.GONE);
+
         }
 
         if (mSteps.current() == mSteps.total() - 1)
@@ -138,24 +162,26 @@ public class TabStepper extends BasePager implements View.OnClickListener {
 
         ((TextView) view.findViewById(R.id.title)).setText(title);
 
-        view.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
 
-                boolean optional = mSteps.getCurrent().isOptional();
+        if (!disabledTouch)
+            view.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
 
-                if (position != mSteps.current())
-                    updateDoneCurrent();
+                    boolean optional = mSteps.getCurrent().isOptional();
 
-                if (!mLinear || optional || mLinearity.beforeDone(position)) {
-                    mSteps.current(position);
-                    updateScrolling(position);
-                } else
-                    onError();
+                    if (position != mSteps.current())
+                        updateDoneCurrent();
 
-                onUpdate();
-            }
-        });
+                    if (!mLinear || optional || mLinearity.beforeDone(position)) {
+                        mSteps.current(position);
+                        updateScrolling(position);
+                    } else
+                        onError();
+
+                    onUpdate();
+                }
+            });
 
         return view;
     }
@@ -188,6 +214,12 @@ public class TabStepper extends BasePager implements View.OnClickListener {
             }
         }, getErrorTimeout() + 300);
 
+    }
+
+    @Override
+    public void onPrevious() {
+        super.onPrevious();
+        updateScrolling(mSteps.current() - 1);
     }
 
     @Override
