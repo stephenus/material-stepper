@@ -61,7 +61,7 @@ public class TabSample extends TabStepper {
         setLinear(true);
 
         // show a "previous" button in tab navigation
-        showPreviousButton()
+        showPreviousButton();
         
         // disable touch event on tab
         disabledTouch();
