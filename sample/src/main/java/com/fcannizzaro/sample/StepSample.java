@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.github.fcannizzaro.materialstepper.AbstractStep;
 
@@ -30,6 +31,8 @@ public class StepSample extends AbstractStep {
                     mStepper.getExtras().putInt("Click", i);
             }
         });
+
+        //TextView tex = new TextView(mStepper.getApplication().getApplicationContext());
 
         return v;
     }

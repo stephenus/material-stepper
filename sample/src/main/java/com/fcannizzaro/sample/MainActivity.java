@@ -62,6 +62,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             intent = new Intent(this, TabSample.class);
             intent.putExtra("linear", true);
         }
+
         startActivityForResult(intent, 1);
 
     }

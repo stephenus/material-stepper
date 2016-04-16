@@ -1,6 +1,7 @@
 package com.fcannizzaro.sample;
 
 import android.os.Bundle;
+import android.widget.TextView;
 
 import com.github.fcannizzaro.materialstepper.AbstractStep;
 import com.github.fcannizzaro.materialstepper.style.TextStepper;
@@ -24,6 +25,7 @@ public class TextSample extends TextStepper {
         addStep(createFragment(new StepSample()));
 
         super.onCreate(savedInstanceState);
+
     }
 
     private AbstractStep createFragment(AbstractStep fragment) {
