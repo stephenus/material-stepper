@@ -1,8 +1,6 @@
 package com.github.fcannizzaro.materialstepper.style;
 
 import android.support.v4.view.ViewPager;
-import android.view.MotionEvent;
-import android.view.View;
 
 import com.github.fcannizzaro.materialstepper.AbstractStep;
 import com.github.fcannizzaro.materialstepper.R;
@@ -26,12 +24,6 @@ public class BasePager extends BaseStyle {
         mPager = (ViewPager) findViewById(R.id.stepPager);
         assert mPager != null;
         mPager.setAdapter(mPagerAdapter);
-        mPager.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
-                return true;
-            }
-        });
         mSteps.get(0).onStepVisible();
         mPager.addOnPageChangeListener(new PageChangeAdapter() {
             @Override
