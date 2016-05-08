@@ -19,6 +19,7 @@ Add the dependency
 
 ```gradle
 dependencies {
+<<<<<<< HEAD
     compile 'com.github.fcannizzaro:material-stepper:1.1.2'
 }
 ```
