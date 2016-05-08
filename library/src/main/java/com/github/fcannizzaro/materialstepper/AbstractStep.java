@@ -19,7 +19,7 @@ public abstract class AbstractStep extends Fragment implements Nextable {
 
     @Override
     public String optional() {
-        return getString(R.string.ms_optional);
+        return isAdded() ? getString(R.string.ms_optional) : "";
     }
 
     public abstract String name();
