@@ -6,7 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.TextView;
 
 import com.github.fcannizzaro.materialstepper.AbstractStep;
 
@@ -16,30 +15,34 @@ import com.github.fcannizzaro.materialstepper.AbstractStep;
 public class StepSample extends AbstractStep {
 
     private int i = 1;
-    private Button button;
+    private final static String CLICK = "click";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         View v = inflater.inflate(R.layout.step, container, false);
-        button = (Button) v.findViewById(R.id.button);
+        Button button = (Button) v.findViewById(R.id.button);
+
+        if (savedInstanceState != null)
+            i = savedInstanceState.getInt(CLICK, 0);
+
+        button.setText(Html.fromHtml("Tap <b>" + i + "</b>"));
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                button.setText(Html.fromHtml("Tap <b>" + (i++) + "</b>"));
-                if (mStepper != null)
-                    mStepper.getExtras().putInt("Click", i);
+                ((Button) view).setText(Html.fromHtml("Tap <b>" + (++i) + "</b>"));
+                mStepper.getExtras().putInt(CLICK, i);
             }
         });
-
-        //TextView tex = new TextView(mStepper.getApplication().getApplicationContext());
 
         return v;
     }
 
     @Override
-    public void onStepVisible() {
-        super.onStepVisible();
+    public void onSaveInstanceState(Bundle state) {
+        super.onSaveInstanceState(state);
+        state.putInt(CLICK, i);
     }
 
     @Override

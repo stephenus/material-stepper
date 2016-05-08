@@ -1,5 +1,6 @@
 package com.github.fcannizzaro.materialstepper;
 
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 
 import com.github.fcannizzaro.materialstepper.interfaces.Nextable;
@@ -15,6 +16,12 @@ public abstract class AbstractStep extends Fragment implements Nextable {
     public AbstractStep stepper(BaseStyle mStepper) {
         this.mStepper = mStepper;
         return this;
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setRetainInstance(true);
     }
 
     @Override

@@ -12,10 +12,9 @@ public class ProgressSample extends ProgressStepper {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        // setColorPrimary(Color.parseColor("#009688"));
-        // setColorPrimaryDark(Color.parseColor("#00796b"));
         setErrorTimeout(1500);
         setTitle("Progress Stepper");
+        useStateAdapter();
 
         addStep(createFragment(new StepSample()));
         addStep(createFragment(new StepSample()));
@@ -32,4 +31,5 @@ public class ProgressSample extends ProgressStepper {
         fragment.setArguments(b);
         return fragment;
     }
+
 }

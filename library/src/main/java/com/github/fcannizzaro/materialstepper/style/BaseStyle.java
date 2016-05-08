@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Html;
@@ -32,6 +31,7 @@ public class BaseStyle extends AppCompatActivity implements Stepable {
     // properties
     protected int tintColor, primaryColor, primaryColorDark;
     private int mErrorTimeout = 1500;
+    private boolean useStateAdapter = false;
 
     // getters
     protected int getColor() {
@@ -46,11 +46,19 @@ public class BaseStyle extends AppCompatActivity implements Stepable {
         this.mErrorTimeout = mErrorTimeout;
     }
 
-    // setters
+    protected void useStateAdapter() {
+        this.useStateAdapter = true;
+    }
+
+    public boolean getUseStateAdapter() {
+        return useStateAdapter;
+    }
 
     public Bundle getExtras() {
         return mExtras;
     }
+
+    // setters
 
     protected void setTitle(String mTitle) {
         this.mTitle = mTitle;

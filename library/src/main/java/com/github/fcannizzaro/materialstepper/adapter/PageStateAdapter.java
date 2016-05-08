@@ -1,7 +1,7 @@
 package com.github.fcannizzaro.materialstepper.adapter;
 
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.FragmentStatePagerAdapter;
 
 import com.github.fcannizzaro.materialstepper.AbstractStep;
 import com.github.fcannizzaro.materialstepper.interfaces.Pageable;
@@ -13,11 +13,11 @@ import java.util.List;
  * @author Francesco Cannizzaro (fcannizzaro).
  */
 
-public class PageAdapter extends FragmentPagerAdapter implements Pageable {
+public class PageStateAdapter extends FragmentStatePagerAdapter implements Pageable {
 
     private ArrayList<AbstractStep> fragments = new ArrayList<>();
 
-    public PageAdapter(FragmentManager fm) {
+    public PageStateAdapter(FragmentManager fm) {
         super(fm);
     }
 

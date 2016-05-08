@@ -19,8 +19,7 @@ Add the dependency
 
 ```gradle
 dependencies {
-<<<<<<< HEAD
-    compile 'com.github.fcannizzaro:material-stepper:1.1.2'
+   compile 'com.github.fcannizzaro:material-stepper:1.1.3'
 }
 ```
 
@@ -55,6 +54,9 @@ public class TabSample extends TabStepper {
         setColorPrimaryDark(Color.parseColor("#5d4037"));
 
         setErrorTimeout(1500);
+
+        // use FragmentStatePagerAdapter
+        useStateAdapter();
 
         // --- only TabStepper ---
         
