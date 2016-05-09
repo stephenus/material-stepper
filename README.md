@@ -80,8 +80,6 @@ use alternative tab style
 #### void onComplete()
 called when 'complete' button is pressed
 
-## Sample
-
 ```java
 public class Sample extends TabStepper {
 
@@ -97,7 +95,7 @@ public class Sample extends TabStepper {
 	*/
 	
 	// call super at the end
-        super.onCreate(savedInstanceState);
+	super.onCreate(savedInstanceState);
     }
 
 ```
@@ -121,8 +119,6 @@ override condition to move to next step [Default = true]
 
 #### void onStepVisible()
 called when a step is visible
-
-##Sample
 
 ```java
 public class StepSample extends AbstractStep {
@@ -173,8 +169,6 @@ get available bundle for current step
 
 #### Bundle getStepDataFor(int step)
 get bundle for specific step and set your data
-
-## Sample
 
 ```java
 // get bundle for step 3
