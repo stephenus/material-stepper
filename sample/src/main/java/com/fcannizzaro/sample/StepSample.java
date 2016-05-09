@@ -61,7 +61,7 @@ public class StepSample extends AbstractStep {
 
     @Override
     public void onStepVisible() {
-        if (getStepData() != null)
+        if (getStepData() != null && button != null)
             button.setText(Html.fromHtml("Tap <b>" + getStepData().getInt(NEXT_DATA) + "</b>"));
     }
 
