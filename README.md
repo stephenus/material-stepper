@@ -41,10 +41,10 @@ set stepper title
 #### addStep(String)
 add a step
 
-#### setColorPrimary(int)
+#### setPrimaryColor(int)
 set primary color (Toolbar/ Progress & Dot & Tab Circle color )
 
-#### setColorPrimaryDark(int)
+#### setDarkPrimaryColor(int)
 set status bar & text color
 
 #### setErrorTimeout(int)
