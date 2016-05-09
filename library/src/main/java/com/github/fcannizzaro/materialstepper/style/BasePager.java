@@ -38,7 +38,7 @@ public class BasePager extends BaseStyle {
 
     private void initAdapter() {
         if (mPagerAdapter == null)
-            mPagerAdapter = getUseStateAdapter() ? new PageStateAdapter(getSupportFragmentManager()) : new PageAdapter(getSupportFragmentManager());
+            mPagerAdapter = getStateAdapter() ? new PageStateAdapter(getSupportFragmentManager()) : new PageAdapter(getSupportFragmentManager());
     }
 
     @Override

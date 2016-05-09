@@ -19,7 +19,7 @@ Add the dependency
 
 ```gradle
 dependencies {
-   compile 'com.github.fcannizzaro:material-stepper:1.1.4'
+   compile 'com.github.fcannizzaro:material-stepper:1.1.5'
 }
 ```
 
@@ -35,36 +35,36 @@ Extend one of these classes ```TextStepper```, ```ProgressStepper```, ```DotStep
 
 ## Methods
 
-### setTitle(String)
+#### setTitle(String)
 set stepper title
 
-### addStep(String)
+#### addStep(String)
 add a step
 
-### setColorPrimary(int)
+#### setColorPrimary(int)
 set primary color (Toolbar/ Progress & Dot & Tab Circle color )
 
-### setColorPrimaryDark(int)
+#### setColorPrimaryDark(int)
 set status bar & text color
 
-### setErrorTimeout(int)
+#### setErrorTimeout(int)
 set timeout (milliseconds) of error message
 
-### useStateAdapter()
+#### setStateAdapter()
 use FragmentStatePagerAdapter for ViewPager instead of FragmentPagerAdapter
 
 ## Tab Stepper Methods
 
-### setLinear(boolean)
+#### setLinear(boolean)
 limit user path (user has to complete previous step before move to next)
 
-### showPreviousButton()
+#### setPreviousVisible()
 show previous button on the left
 
-### disabledTouch()
+#### setDisabledTouch()
 disable user touch on tabs (prevent click)
 
-### setAlternativeTab(boolean)
+#### setAlternativeTab(boolean)
 use alternative tab style
 
  - classic
@@ -77,7 +77,7 @@ use alternative tab style
 
 ## Override Method
 
-### void onComplete()
+#### void onComplete()
 called when 'complete' button is pressed
 
 ## Sample
@@ -107,19 +107,19 @@ Extend ```AbstractStep```
 
 ## Override Methods
 
-### String name()
+#### String name()
 override step name
 
-### String error()
+#### String error()
 override error message (HTML supported)
 
-### boolean isOptional()
+#### boolean isOptional()
 override if is optional [Default = false]
 
-### boolean nextIf()
+#### boolean nextIf()
 override condition to move to next step [Default = true]
 
-### void onStepVisible()
+#### void onStepVisible()
 called when a step is visible
 
 ##Sample
@@ -168,10 +168,10 @@ public class StepSample extends AbstractStep {
 
 # Share Data between steps
 
-### Bundle getStepData()
+#### Bundle getStepData()
 get available bundle for current step
 
-### Bundle getStepDataFor(int step)
+#### Bundle getStepDataFor(int step)
 get bundle for specific step and set your data
 
 ## Sample

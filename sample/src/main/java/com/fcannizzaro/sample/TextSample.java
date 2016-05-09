@@ -1,7 +1,6 @@
 package com.fcannizzaro.sample;
 
 import android.os.Bundle;
-import android.widget.TextView;
 
 import com.github.fcannizzaro.materialstepper.AbstractStep;
 import com.github.fcannizzaro.materialstepper.style.TextStepper;
@@ -13,8 +12,6 @@ public class TextSample extends TextStepper {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        // setColorPrimary(Color.parseColor("#f44336"));
-        // setColorPrimaryDark(Color.parseColor("#d32f2f"));
         setErrorTimeout(1000);
         setTitle("Text Stepper");
 

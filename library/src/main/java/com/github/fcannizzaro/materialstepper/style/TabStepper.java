@@ -45,11 +45,11 @@ public class TabStepper extends BasePager implements View.OnClickListener {
         this.mLinear = mLinear;
     }
 
-    protected void disabledTouch() {
+    protected void setDisabledTouch() {
         this.disabledTouch = true;
     }
 
-    protected void showPreviousButton() {
+    protected void setPreviousVisible() {
         this.showPrevButton = true;
     }
 
@@ -230,4 +230,15 @@ public class TabStepper extends BasePager implements View.OnClickListener {
         } else
             onError();
     }
+
+    @Deprecated
+    protected void disabledTouch() {
+        this.disabledTouch = true;
+    }
+
+    @Deprecated
+    protected void showPreviousButton() {
+        this.showPrevButton = true;
+    }
+
 }

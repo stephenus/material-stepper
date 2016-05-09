@@ -16,8 +16,8 @@ public class TabClassicSample extends TabStepper {
         setLinear(false);
         setTitle("Tab Stepper <small>(Classic Tab) </small>");
         setAlternativeTab(false);
-        disabledTouch();
-        showPreviousButton();
+        setDisabledTouch();
+        setPreviousVisible();
 
         addStep(createFragment(new StepSample()));
         addStep(createFragment(new StepSample()));

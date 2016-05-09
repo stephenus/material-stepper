@@ -12,8 +12,6 @@ public class DotsSample extends DotStepper {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        // setColorPrimary(Color.parseColor("#ff5722"));
-        // setColorPrimaryDark(Color.parseColor("#e64a19"));
         setErrorTimeout(1500);
         setTitle("Dots Stepper");
 

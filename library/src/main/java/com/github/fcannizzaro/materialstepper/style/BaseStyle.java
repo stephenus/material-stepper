@@ -45,8 +45,8 @@ public class BaseStyle extends AppCompatActivity implements Stepable {
     }
 
     public Bundle getStepDataFor(int step) {
-        if(mStepData.get(step) == null)
-            mStepData.put(step,new Bundle());
+        if (mStepData.get(step) == null)
+            mStepData.put(step, new Bundle());
         return mStepData.get(step);
     }
 
@@ -58,11 +58,16 @@ public class BaseStyle extends AppCompatActivity implements Stepable {
         this.mErrorTimeout = mErrorTimeout;
     }
 
+    @Deprecated
     protected void useStateAdapter() {
         this.useStateAdapter = true;
     }
 
-    public boolean getUseStateAdapter() {
+    protected void setStateAdapter() {
+        this.useStateAdapter = true;
+    }
+
+    public boolean getStateAdapter() {
         return useStateAdapter;
     }
 
@@ -76,11 +81,11 @@ public class BaseStyle extends AppCompatActivity implements Stepable {
         this.mTitle = mTitle;
     }
 
-    protected void setColorPrimary(int primaryColor) {
+    protected void setPrimaryColor(int primaryColor) {
         this.primaryColor = primaryColor;
     }
 
-    protected void setColorPrimaryDark(int primaryColorDark) {
+    protected void setDarkPrimaryColor(int primaryColorDark) {
         this.primaryColorDark = primaryColorDark;
     }
 
@@ -188,6 +193,17 @@ public class BaseStyle extends AppCompatActivity implements Stepable {
             step.stepper(this);
 
         return steps;
+    }
+
+
+    @Deprecated
+    protected void setColorPrimary(int primaryColor) {
+        this.primaryColor = primaryColor;
+    }
+
+    @Deprecated
+    protected void setColorPrimaryDark(int primaryColorDark) {
+        this.primaryColorDark = primaryColorDark;
     }
 
 }
