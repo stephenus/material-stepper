@@ -30,7 +30,43 @@ dependencies {
 ![dots](https://github.com/FrancisCan/MaterialStepper/blob/master/screenshot/dots.png?raw=true)
 ![tabs](https://github.com/FrancisCan/MaterialStepper/blob/master/screenshot/tabs.png?raw=true)
 
-## Tab Style
+# Stepper
+Extend one of these classes ```TextStepper```, ```ProgressStepper```, ```DotStepper```, ```TabStepper```
+
+## Methods
+
+### setTitle(String)
+set stepper title
+
+### addStep(String)
+add a step
+
+### setColorPrimary(int)
+set primary color (Toolbar/ Progress & Dot & Tab Circle color )
+
+### setColorPrimaryDark(int)
+set status bar & text color
+
+### setErrorTimeout(int)
+set timeout (milliseconds) of error message
+
+### useStateAdapter()
+use FragmentStatePagerAdapter for ViewPager instead of FragmentPagerAdapter
+
+## Tab Stepper Methods
+
+### setLinear(boolean)
+limit user path (user has to complete previous step before move to next)
+
+### showPreviousButton()
+show previous button on the left
+
+### disabledTouch()
+disable user touch on tabs (prevent click)
+
+### setAlternativeTab(boolean)
+use alternative tab style
+
  - classic
 
  ![classic](https://github.com/FrancisCan/MaterialStepper/blob/master/screenshot/classic.png?raw=true)
@@ -39,60 +75,55 @@ dependencies {
 
  ![alternative](https://github.com/FrancisCan/MaterialStepper/blob/master/screenshot/alternative.png?raw=true)
 
-## Use
+## Override Method
 
-Extend one of these classes ```TextStepper```, ```ProgressStepper```, ```DotStepper```, ```TabStepper```
+### onComplete()
+called when 'complete' button is pressed
+
+## Sample
 
 ```java
-public class TabSample extends TabStepper {
+public class Sample extends TabStepper {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
-        // programatically set colors
-        setColorPrimary(Color.parseColor("#795548"));
-        setColorPrimaryDark(Color.parseColor("#5d4037"));
-
-        setErrorTimeout(1500);
-
-        // use FragmentStatePagerAdapter
-        useStateAdapter();
-
-        // --- only TabStepper ---
-        
-        // set linear stepper or not
-        setLinear(true);
-
-        // show a "previous" button in tab navigation
-        showPreviousButton();
-        
-        // disable touch event on tab
-        disabledTouch();
-        
-        // alternative tab style (see screenshot)
-        setAlternativeTab(true);
-
-        setTitle("Stepper Title");
-
-        addStep(new Step());
-        addStep(new Step());
-        addStep(new Step());
-
+	
+	/*
+		...
+		
+		methods
+		
+		...
+	*/
+	
+	// call super at the end
         super.onCreate(savedInstanceState);
     }
 
-    // called when 'complete' button is pressed
-    @Override
-    public void onComplete() {
-        System.out.println("completed");
-    }
-
 ```
+
+# Step
 Extend ```AbstractStep```
+
+## Override Methods
+
+### String name()
+override step name
+
+### String optional()
+override optional subtitle (tab stepper) [Default = R.string.ms_optional]
+
+error
+### boolean isOptional()
+override if is optional [Default = false]
+
+### boolean nextIf()
+override condition to move to next step [Default = true]
+
+##Sample
+
 ```java
 public class StepSample extends AbstractStep {
-
-   ...
 
     // step name
     @Override
@@ -131,12 +162,14 @@ public class StepSample extends AbstractStep {
     }
 
 }
+
 ```
  Save data returned in ```onActivityResult```
 ```java
 Bundle data = mStepper.getExtras();
 ```
 
+# Strings
 Overwrite these strings for support multilanguage / custom titles
 ```xml
 <string name="ms_prev">PREV</string>
