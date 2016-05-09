@@ -14,6 +14,7 @@ import com.github.fcannizzaro.materialstepper.interfaces.Stepable;
 import com.github.fcannizzaro.materialstepper.util.AttrUtils;
 import com.github.fcannizzaro.materialstepper.util.StepUtils;
 
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -23,6 +24,7 @@ public class BaseStyle extends AppCompatActivity implements Stepable {
 
     protected StepUtils mSteps = new StepUtils();
     protected Bundle mExtras = new Bundle();
+    protected HashMap<Integer, Bundle> mStepData = new HashMap<>();
 
     // attributes
     protected String mTitle;
@@ -36,6 +38,16 @@ public class BaseStyle extends AppCompatActivity implements Stepable {
     // getters
     protected int getColor() {
         return primaryColor;
+    }
+
+    public Bundle getStepData() {
+        return getStepDataFor(mSteps.current());
+    }
+
+    public Bundle getStepDataFor(int step) {
+        if(mStepData.get(step) == null)
+            mStepData.put(step,new Bundle());
+        return mStepData.get(step);
     }
 
     protected int getErrorTimeout() {

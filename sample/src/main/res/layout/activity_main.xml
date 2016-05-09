@@ -6,7 +6,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         android:paddingLeft="16dp"
         android:paddingRight="16dp"
@@ -19,7 +19,7 @@
             android:layout_marginBottom="8dp"
             android:layout_marginLeft="2dp"
             android:fontFamily="sans-serif-light"
-            android:text="LINEAR"
+            android:text="@string/linear"
             android:textSize="18sp" />
 
         <Button
@@ -29,7 +29,7 @@
             android:layout_marginBottom="8dp"
             android:fontFamily="sans-serif-condesed"
             android:padding="16dp"
-            android:text="Tabs Stepper" />
+            android:text="@string/tabs_stepper" />
 
         <Button
             android:id="@+id/text"
@@ -38,7 +38,7 @@
             android:layout_marginBottom="8dp"
             android:fontFamily="sans-serif-condesed"
             android:padding="16dp"
-            android:text="Text Stepper" />
+            android:text="@string/text_stepper" />
 
         <Button
             android:id="@+id/progress"
@@ -47,7 +47,7 @@
             android:layout_marginBottom="8dp"
             android:fontFamily="sans-serif-condesed"
             android:padding="16dp"
-            android:text="Progress Stepper" />
+            android:text="@string/progress_stepper" />
 
         <Button
             android:id="@+id/dots"
@@ -56,7 +56,7 @@
             android:layout_marginBottom="12dp"
             android:fontFamily="sans-serif-condesed"
             android:padding="16dp"
-            android:text="Dots Stepper" />
+            android:text="@string/dots_stepper" />
 
 
         <TextView
@@ -66,7 +66,7 @@
             android:layout_marginLeft="2dp"
             android:layout_marginTop="4dp"
             android:fontFamily="sans-serif-light"
-            android:text="NON LINEAR"
+            android:text="@string/non_linear"
             android:textSize="18sp" />
 
         <Button
@@ -76,7 +76,7 @@
             android:layout_marginBottom="8dp"
             android:fontFamily="sans-serif-condesed"
             android:padding="18dp"
-            android:text="Tabs Stepper (Alternative)" />
+            android:text="@string/tabs_stepper_alternative" />
 
         <Button
             android:id="@+id/tabClassic"
@@ -85,7 +85,7 @@
             android:layout_marginBottom="8dp"
             android:fontFamily="sans-serif-condesed"
             android:padding="18dp"
-            android:text="Tabs Stepper (Classic)" />
+            android:text="@string/tabs_stepper_classic" />
 
     </LinearLayout>
 </ScrollView>

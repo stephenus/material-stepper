@@ -15,13 +15,15 @@ import com.github.fcannizzaro.materialstepper.AbstractStep;
 public class StepSample extends AbstractStep {
 
     private int i = 1;
+    private Button button;
     private final static String CLICK = "click";
+    private final static String NEXT_DATA = "next";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         View v = inflater.inflate(R.layout.step, container, false);
-        Button button = (Button) v.findViewById(R.id.button);
+        button = (Button) v.findViewById(R.id.button);
 
         if (savedInstanceState != null)
             i = savedInstanceState.getInt(CLICK, 0);
@@ -33,6 +35,7 @@ public class StepSample extends AbstractStep {
             public void onClick(View view) {
                 ((Button) view).setText(Html.fromHtml("Tap <b>" + (++i) + "</b>"));
                 mStepper.getExtras().putInt(CLICK, i);
+                getStepDataFor(i).putInt(NEXT_DATA, i * 2);
             }
         });
 
@@ -53,6 +56,13 @@ public class StepSample extends AbstractStep {
     @Override
     public boolean isOptional() {
         return true;
+    }
+
+
+    @Override
+    public void onStepVisible() {
+        if (getStepData() != null)
+            button.setText(Html.fromHtml("Tap <b>" + getStepData().getInt(NEXT_DATA) + "</b>"));
     }
 
     @Override
