@@ -77,7 +77,7 @@ use alternative tab style
 
 ## Override Method
 
-### onComplete()
+### void onComplete()
 called when 'complete' button is pressed
 
 ## Sample
@@ -110,15 +110,17 @@ Extend ```AbstractStep```
 ### String name()
 override step name
 
-### String optional()
-override optional subtitle (tab stepper) [Default = R.string.ms_optional]
+### String error()
+override error message (HTML supported)
 
-error
 ### boolean isOptional()
 override if is optional [Default = false]
 
 ### boolean nextIf()
 override condition to move to next step [Default = true]
+
+### void onStepVisible()
+called when a step is visible
 
 ##Sample
 
@@ -162,8 +164,25 @@ public class StepSample extends AbstractStep {
     }
 
 }
-
 ```
+
+# Share Data between steps
+
+### Bundle getStepData()
+get available bundle for current step
+
+### Bundle getStepDataFor(int step)
+get bundle for specific step and set your data
+
+## Sample
+
+```java
+// get bundle for step 3
+Bundle data = getStepDataFor(3);
+data.putInt("test",5);
+```
+
+# Save Stepper Result
  Save data returned in ```onActivityResult```
 ```java
 Bundle data = mStepper.getExtras();
