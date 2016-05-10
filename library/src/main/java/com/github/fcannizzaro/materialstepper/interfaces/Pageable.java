@@ -9,8 +9,8 @@ import java.util.List;
  */
 public interface Pageable {
 
-    public void add(AbstractStep fragment);
+    void add(AbstractStep fragment);
 
-    public void set(List<AbstractStep> fragments);
+    void set(List<AbstractStep> fragments);
 
 }

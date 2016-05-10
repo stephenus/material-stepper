@@ -34,6 +34,7 @@ public class BaseStyle extends AppCompatActivity implements Stepable {
     protected int tintColor, primaryColor, primaryColorDark;
     private int mErrorTimeout = 1500;
     private boolean useStateAdapter = false;
+    protected boolean startPreviousButton = false;
 
     // getters
     protected int getColor() {
@@ -65,6 +66,10 @@ public class BaseStyle extends AppCompatActivity implements Stepable {
 
     protected void setStateAdapter() {
         this.useStateAdapter = true;
+    }
+
+    protected void setStartPreviousButton() {
+        this.startPreviousButton = true;
     }
 
     public boolean getStateAdapter() {

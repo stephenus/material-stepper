@@ -19,7 +19,7 @@ Add the dependency
 
 ```gradle
 dependencies {
-   compile 'com.github.fcannizzaro:material-stepper:1.1.5'
+   compile 'com.github.fcannizzaro:material-stepper:1.1.6'
 }
 ```
 
@@ -52,6 +52,9 @@ set timeout (milliseconds) of error message
 
 #### setStateAdapter()
 use FragmentStatePagerAdapter for ViewPager instead of FragmentPagerAdapter
+
+#### setStartPreviousButton()
+show initial "previous" button (first step)
 
 ## Tab Stepper Methods
 
@@ -119,6 +122,12 @@ override condition to move to next step [Default = true]
 
 #### void onStepVisible()
 called when a step is visible
+
+#### void onNext()
+called when next button is pressed
+
+#### void onPrevious()
+called when previous button is pressed
 
 ```java
 public class StepSample extends AbstractStep {

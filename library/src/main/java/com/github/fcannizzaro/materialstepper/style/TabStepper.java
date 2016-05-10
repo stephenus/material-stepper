@@ -237,7 +237,7 @@ public class TabStepper extends BasePager implements View.OnClickListener {
     }
 
     @Deprecated
-    protected void showPreviousButton() {
+        protected void showPreviousButton() {
         this.showPrevButton = true;
     }
 

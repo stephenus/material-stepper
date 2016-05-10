@@ -49,6 +49,11 @@ public abstract class AbstractStep extends Fragment implements Nextable {
     }
 
     @Override
+    public void onNext() {
+
+    }
+
+    @Override
     public boolean nextIf() {
         return true;
     }

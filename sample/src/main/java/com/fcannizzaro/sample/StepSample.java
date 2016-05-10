@@ -66,6 +66,16 @@ public class StepSample extends AbstractStep {
     }
 
     @Override
+    public void onNext() {
+        System.out.println("onNext");
+    }
+
+    @Override
+    public void onPrevious() {
+        System.out.println("onPrevious");
+    }
+
+    @Override
     public String optional() {
         return "You can skip";
     }
