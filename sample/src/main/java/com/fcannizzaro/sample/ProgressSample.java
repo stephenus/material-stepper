@@ -15,7 +15,7 @@ public class ProgressSample extends ProgressStepper {
         setErrorTimeout(1500);
         setTitle("Progress Stepper");
         setStateAdapter();
-        setStartPreviousButton();
+        //setStartPreviousButton();
 
         addStep(createFragment(new StepSample()));
         addStep(createFragment(new StepSample()));

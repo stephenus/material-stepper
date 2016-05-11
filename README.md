@@ -19,7 +19,7 @@ Add the dependency
 
 ```gradle
 dependencies {
-   compile 'com.github.fcannizzaro:material-stepper:1.1.6'
+   compile 'com.github.fcannizzaro:material-stepper:1.1.7'
 }
 ```
 
@@ -81,6 +81,7 @@ use alternative tab style
 ## Override Method
 
 #### void onComplete()
+#### void onComplete(Bundle data)
 called when 'complete' button is pressed
 
 ```java

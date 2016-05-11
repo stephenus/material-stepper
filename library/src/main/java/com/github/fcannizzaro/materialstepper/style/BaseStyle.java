@@ -163,6 +163,7 @@ public class BaseStyle extends AppCompatActivity implements Stepable {
             intent.putExtras(mExtras);
             setResult(1, intent);
             onComplete();
+            onComplete(getExtras());
             return;
         }
 
@@ -174,6 +175,10 @@ public class BaseStyle extends AppCompatActivity implements Stepable {
     }
 
     public void onComplete() {
+        // to be redefined
+    }
+
+    public void onComplete(Bundle data) {
         // to be redefined
     }
 
