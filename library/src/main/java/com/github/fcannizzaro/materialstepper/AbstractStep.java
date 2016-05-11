@@ -26,6 +26,10 @@ public abstract class AbstractStep extends Fragment implements Nextable {
         return mStepper.getStepDataFor(step);
     }
 
+    protected Bundle getLastStepData(){
+        return mStepper.getStepDataFor(mStepper.steps()-1);
+    }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

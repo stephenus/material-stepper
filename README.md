@@ -19,7 +19,7 @@ Add the dependency
 
 ```gradle
 dependencies {
-   compile 'com.github.fcannizzaro:material-stepper:1.1.7'
+   compile 'com.github.fcannizzaro:material-stepper:1.1.8'
 }
 ```
 
@@ -179,6 +179,9 @@ get available bundle for current step
 
 #### Bundle getStepDataFor(int step)
 get bundle for specific step and set your data
+
+#### Bundle getLastStepData()
+get bundle for last step
 
 ```java
 // get bundle for step 3

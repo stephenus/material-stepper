@@ -51,6 +51,10 @@ public class BaseStyle extends AppCompatActivity implements Stepable {
         return mStepData.get(step);
     }
 
+    public int steps() {
+        return mSteps.total();
+    }
+
     protected int getErrorTimeout() {
         return mErrorTimeout;
     }
