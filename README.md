@@ -3,6 +3,17 @@
 [![](https://jitpack.io/v/fcannizzaro/material-stepper.svg)](https://jitpack.io/#fcannizzaro/material-stepper)
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Material%20Stepper-brightgreen.svg?style=flat)](http://android-arsenal.com/details/1/3162)
 
+<!--
+ GIT-CARD
+ title: material-stepper
+ description: Android Library to create simple stepper activities
+ cover: https://dl.dropboxusercontent.com/u/73317452/dev/material_stepper.png
+ card_width: 
+ cover_height: 180
+ color: #3f51b5
+ counter_issues: false
+-->
+
 ## Dependency
 
 Add it in your root build.gradle at the end of repositories:
