@@ -4,14 +4,13 @@
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Material%20Stepper-brightgreen.svg?style=flat)](http://android-arsenal.com/details/1/3162)
 
 <!--
- GIT-CARD
- title: Material Stepper
- cover: https://dl.dropboxusercontent.com/u/73317452/dev/material_stepper.png
- cover_height: 180
- color: #3f51b5
- counter_issues: false
--->
-
+  GIT-CARD
+  title: Material Stepper
+  cover: https://dl.dropboxusercontent.com/u/73317452/dev/material_stepper.png
+  counter_issues: false
+  color: #3f51b5
+  -->
+  
 ## Dependency
 
 Add it in your root build.gradle at the end of repositories:
