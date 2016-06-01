@@ -5,10 +5,8 @@
 
 <!--
  GIT-CARD
- title: material-stepper
- description: Android Library to create simple stepper activities
+ title: Material Stepper
  cover: https://dl.dropboxusercontent.com/u/73317452/dev/material_stepper.png
- card_width: 
  cover_height: 180
  color: #3f51b5
  counter_issues: false
