@@ -1,8 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#e0e0e0">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/material_stepper_global"
+        app:theme="@style/Base.ThemeOverlay.AppCompat.Dark.ActionBar"/>
 
     <ViewSwitcher
         android:id="@+id/stepSwitcher"
@@ -29,7 +38,7 @@
                 android:padding="16dp"
                 android:text="@string/ms_prev"
                 android:textColor="@color/material_stepper_bottom_bar_text"
-                android:textSize="16sp" />
+                android:textSize="16sp"/>
 
             <LinearLayout
                 android:id="@+id/dots"
@@ -37,7 +46,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:orientation="horizontal"
-                android:visibility="gone" />
+                android:visibility="gone"/>
 
             <TextView
                 android:id="@+id/stepNext"
@@ -51,7 +60,7 @@
                 android:padding="16dp"
                 android:text="@string/ms_next"
                 android:textColor="@color/material_stepper_bottom_bar_text"
-                android:textSize="@dimen/material_stepper_bottombar_font" />
+                android:textSize="@dimen/material_stepper_bottombar_font"/>
 
             <TextView
                 android:id="@+id/stepEnd"
@@ -66,7 +75,7 @@
                 android:text="@string/ms_end"
                 android:textColor="@color/material_stepper_bottom_bar_text"
                 android:textSize="@dimen/material_stepper_bottombar_font"
-                android:visibility="gone" />
+                android:visibility="gone"/>
 
         </RelativeLayout>
 
@@ -78,13 +87,13 @@
             android:ellipsize="end"
             android:fontFamily="sans-serif"
             android:gravity="center_vertical"
+            android:lines="1"
             android:paddingBottom="16dp"
             android:paddingLeft="16dp"
             android:paddingRight="16dp"
             android:paddingTop="16dp"
-            android:singleLine="true"
             android:textColor="#fff"
-            android:textSize="@dimen/material_stepper_bottombar_font" />
+            android:textSize="@dimen/material_stepper_bottombar_font"/>
 
     </ViewSwitcher>
 
@@ -92,6 +101,7 @@
         android:id="@+id/stepPager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/stepSwitcher" />
+        android:layout_above="@id/stepSwitcher"
+        android:layout_below="@+id/toolbar"/>
 
 </RelativeLayout>

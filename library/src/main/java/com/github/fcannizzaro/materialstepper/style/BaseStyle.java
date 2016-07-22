@@ -6,6 +6,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.text.Html;
 
 import com.github.fcannizzaro.materialstepper.AbstractStep;
@@ -23,18 +24,19 @@ import java.util.List;
 public class BaseStyle extends AppCompatActivity implements Stepable {
 
     protected StepUtils mSteps = new StepUtils();
-    protected Bundle mExtras = new Bundle();
-    protected HashMap<Integer, Bundle> mStepData = new HashMap<>();
+    Bundle mExtras = new Bundle();
+    HashMap<Integer, Bundle> mStepData = new HashMap<>();
 
     // attributes
-    protected String mTitle;
-    protected String mErrorString;
+    String mTitle;
+    String mErrorString;
 
     // properties
-    protected int tintColor, primaryColor, primaryColorDark;
+    int tintColor, primaryColor, primaryColorDark;
+    boolean startPreviousButton = false;
     private int mErrorTimeout = 1500;
     private boolean useStateAdapter = false;
-    protected boolean startPreviousButton = false;
+    private Toolbar toolbar;
 
     // getters
     protected int getColor() {
@@ -55,7 +57,7 @@ public class BaseStyle extends AppCompatActivity implements Stepable {
         return mSteps.total();
     }
 
-    protected int getErrorTimeout() {
+    int getErrorTimeout() {
         return mErrorTimeout;
     }
 
@@ -76,7 +78,7 @@ public class BaseStyle extends AppCompatActivity implements Stepable {
         this.startPreviousButton = true;
     }
 
-    public boolean getStateAdapter() {
+    boolean getStateAdapter() {
         return useStateAdapter;
     }
 
@@ -108,6 +110,16 @@ public class BaseStyle extends AppCompatActivity implements Stepable {
         mSteps.addAll(wrap(steps));
     }
 
+    protected void init() {
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setBackgroundColor(primaryColor);
+        toolbar.setTitle(Html.fromHtml(mTitle));
+    }
+
+    public Toolbar getToolbar(){
+        return toolbar;
+    }
+
     private void findColors() {
 
         if (primaryColor == 0)
@@ -124,7 +136,7 @@ public class BaseStyle extends AppCompatActivity implements Stepable {
 
     }
 
-    protected void applyTheme() {
+    void applyTheme() {
 
         findColors();
 
@@ -182,7 +194,7 @@ public class BaseStyle extends AppCompatActivity implements Stepable {
         // to be redefined
     }
 
-    public void onComplete(Bundle data) {
+    void onComplete(Bundle data) {
         // to be redefined
     }
 

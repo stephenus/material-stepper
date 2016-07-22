@@ -3,13 +3,16 @@ package com.fcannizzaro.sample;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    Button tabs, progress, text, dots, tabsNL, tabClassic;
+    private Button tabs, progress, text, dots, tabsNL, tabClassic;
+    private Toolbar toolbar;
+
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -33,6 +36,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         text = (Button) findViewById(R.id.text);
         progress = (Button) findViewById(R.id.progress);
         dots = (Button) findViewById(R.id.dots);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
 
         tabs.setOnClickListener(this);
         tabsNL.setOnClickListener(this);
@@ -40,6 +44,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         text.setOnClickListener(this);
         progress.setOnClickListener(this);
         dots.setOnClickListener(this);
+
+        setSupportActionBar(toolbar);
 
     }
 

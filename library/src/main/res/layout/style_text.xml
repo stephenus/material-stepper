@@ -1,15 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tool="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#e0e0e0">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/material_stepper_global"
+        app:theme="@style/Base.ThemeOverlay.AppCompat.Dark.ActionBar"/>
 
     <LinearLayout
         android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/navigation"
+        android:layout_below="@+id/toolbar"
         android:orientation="vertical">
 
         <ViewSwitcher
@@ -31,7 +41,7 @@
                 android:paddingTop="16dp"
                 android:textColor="@color/material_stepper_bottom_bar_text"
                 android:textSize="15sp"
-                tool:text="Step 4 of 6" />
+                tool:text="Step 4 of 6"/>
 
             <TextView
                 android:id="@+id/stepError"
@@ -45,27 +55,27 @@
                 android:paddingLeft="16dp"
                 android:paddingRight="16dp"
                 android:paddingTop="16dp"
-                android:singleLine="true"
+                android:lines="1"
                 android:textColor="#fff"
                 android:textSize="16sp"
-                tool:text="Step 4 of 6" />
+                tool:text="Step 4 of 6"/>
 
         </ViewSwitcher>
 
         <com.github.fcannizzaro.materialstepper.widget.LockedViewPager
             android:id="@+id/stepPager"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"/>
 
     </LinearLayout>
 
     <RelativeLayout
         android:id="@+id/navigation"
-        android:elevation="4dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="@color/material_stepper_bottom_bar">
+        android:background="@color/material_stepper_bottom_bar"
+        android:elevation="4dp">
 
         <TextView
             android:id="@+id/stepPrev"
@@ -79,7 +89,7 @@
             android:padding="16dp"
             android:text="@string/ms_prev"
             android:textColor="@color/material_stepper_bottom_bar_text"
-            android:textSize="@dimen/material_stepper_bottombar_font" />
+            android:textSize="@dimen/material_stepper_bottombar_font"/>
 
         <TextView
             android:id="@+id/stepNext"
@@ -93,7 +103,7 @@
             android:padding="16dp"
             android:text="@string/ms_next"
             android:textColor="@color/material_stepper_bottom_bar_text"
-            android:textSize="@dimen/material_stepper_bottombar_font" />
+            android:textSize="@dimen/material_stepper_bottombar_font"/>
 
         <TextView
             android:id="@+id/stepEnd"
@@ -108,7 +118,7 @@
             android:text="@string/ms_end"
             android:textColor="@color/material_stepper_global"
             android:textSize="@dimen/material_stepper_bottombar_font"
-            android:visibility="gone" />
+            android:visibility="gone"/>
 
     </RelativeLayout>
 

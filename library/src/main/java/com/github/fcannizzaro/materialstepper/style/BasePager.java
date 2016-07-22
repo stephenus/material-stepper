@@ -24,6 +24,7 @@ public class BasePager extends BaseStyle {
     protected Pageable mPagerAdapter;
 
     protected void init() {
+        super.init();
         mPager = (ViewPager) findViewById(R.id.stepPager);
         assert mPager != null;
         mPager.setAdapter((PagerAdapter) mPagerAdapter);

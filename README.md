@@ -19,7 +19,7 @@ Add the dependency
 
 ```gradle
 dependencies {
-   compile 'com.github.fcannizzaro:material-stepper:1.1.8'
+   compile 'com.github.fcannizzaro:material-stepper:1.1.9'
 }
 ```
 
@@ -77,6 +77,9 @@ use alternative tab style
  - alternative
 
  ![alternative](https://github.com/FrancisCan/MaterialStepper/blob/master/screenshot/alternative.png?raw=true)
+
+#### Toolbar getToolbar();
+get stepper toolbar
 
 ## Override Method
 
