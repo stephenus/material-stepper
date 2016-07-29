@@ -39,7 +39,7 @@ public class TextStepper extends BaseNavigation {
     @Override
     public void onUpdate() {
         super.onUpdate();
-        int next = mSteps.current() < mSteps.total() - 1 ? mSteps.current() + 1 : mSteps.current();
+        int next = mSteps.current() < mSteps.total() ? mSteps.current() + 1 : mSteps.current();
         mCounter.setText(mText.replace("$current", String.valueOf(next)).replace("$total", String.valueOf(mSteps.total())));
     }
 
