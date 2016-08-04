@@ -13,9 +13,22 @@
   -->
   
 ## Dependency
+```gradle
+allprojects {
+    repositories {
+		...
+		maven { url "https://jitpack.io" }
+	}
+}
+```
 
-[1.2.1](https://github.com/fcannizzaro/material-stepper/releases/tag/1.2.1)
+Add the dependency
 
+```gradle
+dependencies {
+   compile 'com.github.fcannizzaro:material-stepper:1.2.1'
+}
+```
 
 ## Preview
 
