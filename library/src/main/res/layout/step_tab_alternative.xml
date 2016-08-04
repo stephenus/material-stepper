@@ -64,7 +64,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:text="@string/ms_optional"
-                android:textColor="@color/material_stepper_inactive_text"
+                android:textColor="@color/material_stepper_optional"
                 android:textSize="@dimen/material_stepper_optional_font"
                 android:visibility="gone" />
 

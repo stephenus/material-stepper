@@ -52,7 +52,7 @@
             android:layout_height="wrap_content"
             android:alpha=".87"
             android:fontFamily="sans-serifi-medium"
-            android:textColor="#000"
+            android:textColor="@color/material_stepper_active_text"
             android:textSize="14sp" />
 
         <TextView
@@ -60,7 +60,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/ms_optional"
-            android:textColor="#bdbdbd"
+            android:textColor="@color/material_stepper_optional"
             android:textSize="12sp"
             android:visibility="gone" />
 
@@ -75,6 +75,6 @@
         android:layout_marginStart="24dp"
         android:layout_toEndOf="@+id/container_txt"
         android:layout_toRightOf="@+id/container_txt"
-        android:background="#bdbdbd" />
+        android:background="@color/material_stepper_connector" />
 
 </RelativeLayout>

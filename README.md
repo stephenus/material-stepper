@@ -1,17 +1,7 @@
 # Material Stepper
 
 [![](https://jitpack.io/v/fcannizzaro/material-stepper.svg)](https://jitpack.io/#fcannizzaro/material-stepper)
-[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Material%20Stepper-brightgreen.svg?style=flat)](http://android-arsenal.com/details/1/3162)
-[![git-card](http://goo.gl/2TUzYL)](http://fcannizzaro.github.io/git-card/get?user=fcannizzaro&repo=material-stepper)
 
-<!--
-  GIT-CARD
-  title: Material Stepper
-  cover: https://dl.dropboxusercontent.com/u/73317452/dev/material_stepper.png
-  counter_issues: false
-  color: #3f51b5
-  -->
-  
 ## Dependency
 
 Add it in your root build.gradle at the end of repositories:
@@ -29,7 +19,7 @@ Add the dependency
 
 ```gradle
 dependencies {
-   compile 'com.github.fcannizzaro:material-stepper:1.1.9'
+   compile 'com.github.fcannizzaro:material-stepper:1.1.8'
 }
 ```
 
@@ -87,9 +77,6 @@ use alternative tab style
  - alternative
 
  ![alternative](https://github.com/FrancisCan/MaterialStepper/blob/master/screenshot/alternative.png?raw=true)
-
-#### Toolbar getToolbar();
-get stepper toolbar
 
 ## Override Method
 

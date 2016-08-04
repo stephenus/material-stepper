@@ -10,7 +10,7 @@ import android.widget.Button;
 import com.github.fcannizzaro.materialstepper.AbstractStep;
 
 /**
- * Created by Francesco Cannizzaro on 23/12/2015.
+ * @author Francesco Cannizzaro (fcannizzaro).
  */
 public class StepSample extends AbstractStep {
 

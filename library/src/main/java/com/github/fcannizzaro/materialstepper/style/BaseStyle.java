@@ -129,9 +129,6 @@ public class BaseStyle extends AppCompatActivity implements Stepable {
             primaryColor = ContextCompat.getColor(this, R.color.material_stepper_global);
 
         if (primaryColorDark == 0)
-            primaryColorDark = AttrUtils.getPrimaryDark(this);
-
-        if (primaryColorDark == 0)
             primaryColorDark = ContextCompat.getColor(this, R.color.material_stepper_global_dark);
 
     }

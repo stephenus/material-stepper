@@ -5,7 +5,7 @@
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#e0e0e0"
+    android:background="@color/material_stepper_background"
     android:orientation="vertical">
 
     <android.support.v7.widget.Toolbar
@@ -26,7 +26,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:minHeight="?attr/actionBarSize"
-            card_view:cardBackgroundColor="#fff"
+            card_view:cardBackgroundColor="@color/material_stepper_top_bar"
             card_view:cardCornerRadius="0dp">
 
             <HorizontalScrollView
@@ -89,8 +89,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_margin="8dp"
                 android:text="@string/ms_continue"
-                android:textSize="@dimen/material_stepper_bottombar_font"
-                android:textStyle="bold"/>
+                android:textSize="@dimen/material_stepper_bottombar_font"/>
 
         </RelativeLayout>
 
@@ -106,7 +105,7 @@
             android:paddingLeft="16dp"
             android:paddingRight="16dp"
             android:paddingTop="16dp"
-            android:singleLine="true"
+            android:lines="1"
             android:textColor="#fff"
             android:textSize="@dimen/material_stepper_bottombar_font"/>
 

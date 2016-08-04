@@ -5,7 +5,7 @@
     xmlns:tool="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#e0e0e0">
+    android:background="@color/material_stepper_background">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
@@ -39,7 +39,7 @@
                 android:paddingLeft="16dp"
                 android:paddingRight="16dp"
                 android:paddingTop="16dp"
-                android:textColor="@color/material_stepper_bottom_bar_text"
+                android:textColor="@color/material_stepper_top_bar_text"
                 android:textSize="15sp"
                 tool:text="Step 4 of 6"/>
 
