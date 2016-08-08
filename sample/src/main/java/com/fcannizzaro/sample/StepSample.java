@@ -17,7 +17,6 @@ public class StepSample extends AbstractStep {
     private int i = 1;
     private Button button;
     private final static String CLICK = "click";
-    private final static String NEXT_DATA = "next";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -35,7 +34,6 @@ public class StepSample extends AbstractStep {
             public void onClick(View view) {
                 ((Button) view).setText(Html.fromHtml("Tap <b>" + (++i) + "</b>"));
                 mStepper.getExtras().putInt(CLICK, i);
-                getStepDataFor(i).putInt(NEXT_DATA, i * 2);
             }
         });
 
@@ -61,8 +59,6 @@ public class StepSample extends AbstractStep {
 
     @Override
     public void onStepVisible() {
-        if (getStepData() != null && button != null)
-            button.setText(Html.fromHtml("Tap <b>" + getStepData().getInt(NEXT_DATA) + "</b>"));
     }
 
     @Override

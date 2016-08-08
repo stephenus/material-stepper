@@ -8,11 +8,11 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.Html;
+import android.util.TypedValue;
 
 import com.github.fcannizzaro.materialstepper.AbstractStep;
 import com.github.fcannizzaro.materialstepper.R;
 import com.github.fcannizzaro.materialstepper.interfaces.Stepable;
-import com.github.fcannizzaro.materialstepper.util.AttrUtils;
 import com.github.fcannizzaro.materialstepper.util.StepUtils;
 
 import java.util.HashMap;
@@ -116,20 +116,29 @@ public class BaseStyle extends AppCompatActivity implements Stepable {
         toolbar.setTitle(Html.fromHtml(mTitle));
     }
 
-    public Toolbar getToolbar(){
+    public Toolbar getToolbar() {
         return toolbar;
     }
 
     private void findColors() {
 
-        if (primaryColor == 0)
-            primaryColor = AttrUtils.getPrimary(this);
+        if (primaryColor == 0) {
+            TypedValue typedValue = new TypedValue();
+            getTheme().resolveAttribute(R.attr.colorPrimary, typedValue, true);
+            primaryColor = typedValue.data;
+        }
 
         if (primaryColor == 0)
             primaryColor = ContextCompat.getColor(this, R.color.material_stepper_global);
 
         if (primaryColorDark == 0)
             primaryColorDark = ContextCompat.getColor(this, R.color.material_stepper_global_dark);
+
+        if (primaryColor == 0) {
+            TypedValue typedValue = new TypedValue();
+            getTheme().resolveAttribute(R.attr.colorPrimaryDark, typedValue, true);
+            primaryColorDark = typedValue.data;
+        }
 
     }
 
@@ -191,7 +200,7 @@ public class BaseStyle extends AppCompatActivity implements Stepable {
         // to be redefined
     }
 
-    void onComplete(Bundle data) {
+    public void onComplete(Bundle data) {
         // to be redefined
     }
 

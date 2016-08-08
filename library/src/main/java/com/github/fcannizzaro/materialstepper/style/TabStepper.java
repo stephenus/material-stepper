@@ -76,7 +76,6 @@ public class TabStepper extends BasePager implements View.OnClickListener {
         mPreviousButton = (TextView) findViewById(R.id.stepPrev);
 
         mContinue = (Button) findViewById(R.id.continueButton);
-        assert mContinue != null;
         mContinue.setTextColor(primaryColor);
         mContinue.setOnClickListener(this);
 
@@ -237,7 +236,7 @@ public class TabStepper extends BasePager implements View.OnClickListener {
     }
 
     @Deprecated
-        protected void showPreviousButton() {
+    protected void showPreviousButton() {
         this.showPrevButton = true;
     }
 
