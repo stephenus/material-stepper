@@ -27,12 +27,12 @@ public class StepSample extends AbstractStep {
         if (savedInstanceState != null)
             i = savedInstanceState.getInt(CLICK, 0);
 
-        button.setText(Html.fromHtml("Tap <b>" + i + "</b>"));
+        button.setText(Html.fromHtml("Tap meow <b>" + i + "</b>"));
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ((Button) view).setText(Html.fromHtml("Tap <b>" + (++i) + "</b>"));
+                ((Button) view).setText(Html.fromHtml("Tap meow <b>" + (++i) + "</b>"));
                 mStepper.getExtras().putInt(CLICK, i);
             }
         });
@@ -48,7 +48,7 @@ public class StepSample extends AbstractStep {
 
     @Override
     public String name() {
-        return "Tab " + getArguments().getInt("position", 0);
+        return "Tab meow " + getArguments().getInt("position", 0);
     }
 
     @Override
@@ -73,7 +73,7 @@ public class StepSample extends AbstractStep {
 
     @Override
     public String optional() {
-        return "You can skip";
+        return "";
     }
 
     @Override

@@ -18,12 +18,17 @@ public class TabSample extends TabStepper {
         setLinear(linear);
         setTitle("Tab Stepper <small>(" + (linear ? "" : "Non ") + "Linear)</small>");
         setAlternativeTab(true);
+        setContinueButtonText("ВПЕРЕД");
+        setPreviousButtonText("НАЗАД");
+        setCompletedButtonText("СОЗДАТЬ ПРЕДЛОЖЕНИЕ");
+        setStepperTitleText("There's a law");
+        setPreviousVisible();
+
 
         addStep(createFragment(new StepSample()));
         addStep(createFragment(new StepSample()));
         addStep(createFragment(new StepSample()));
-        addStep(createFragment(new StepSample()));
-        addStep(createFragment(new StepSample()));
+
 
         super.onCreate(savedInstanceState);
     }

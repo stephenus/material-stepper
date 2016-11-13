@@ -40,6 +40,16 @@ public class TabStepper extends BasePager implements View.OnClickListener {
     private LinearityChecker mLinearity;
     private Button mContinue;
     private TextView mPreviousButton;
+    private TextView mStepperTitle;
+
+
+    private String mContinueButtonText = "CONTINUE";
+    private String mCompletedButtonText = "COMPLETE";
+    private String mPreviousButtonText = "PREVIOUS";
+    private String mStepperTitleText;
+
+
+
 
     protected void setLinear(boolean mLinear) {
         this.mLinear = mLinear;
@@ -57,6 +67,27 @@ public class TabStepper extends BasePager implements View.OnClickListener {
         this.mTabAlternative = mTabAlternative;
     }
 
+    protected void setContinueButtonText(String continueButtonText)
+    {
+        this.mContinueButtonText = continueButtonText;
+    }
+
+    protected void setCompletedButtonText(String completedButtonText)
+    {
+        this.mCompletedButtonText = completedButtonText;
+    }
+
+    protected void setPreviousButtonText(String previousButtonText)
+    {
+        this.mPreviousButtonText = previousButtonText;
+    }
+
+    protected void setStepperTitleText(String stepperTitleText)
+    {
+        this.mStepperTitleText = stepperTitleText;
+    }
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -73,11 +104,15 @@ public class TabStepper extends BasePager implements View.OnClickListener {
         mStepTabs = (LinearLayout) mTabs.findViewById(R.id.stepTabs);
         mSwitch = (ViewSwitcher) findViewById(R.id.stepSwitcher);
         mError = (TextView) findViewById(R.id.stepError);
+        mStepperTitle = (TextView) findViewById(R.id.stepperTitle);
+        mStepperTitle.setText(this.mStepperTitleText);
         mPreviousButton = (TextView) findViewById(R.id.stepPrev);
+        mPreviousButton.setText(this.mPreviousButtonText);
 
         mContinue = (Button) findViewById(R.id.continueButton);
         mContinue.setTextColor(primaryColor);
         mContinue.setOnClickListener(this);
+        mContinue.setText(this.mContinueButtonText);
 
         mSwitch.setDisplayedChild(0);
         mSwitch.setInAnimation(TabStepper.this, R.anim.in_from_bottom);
@@ -133,9 +168,9 @@ public class TabStepper extends BasePager implements View.OnClickListener {
         }
 
         if (mSteps.current() == mSteps.total() - 1)
-            mContinue.setText(R.string.ms_end);
+            mContinue.setText(this.mCompletedButtonText);
         else
-            mContinue.setText(R.string.ms_continue);
+            mContinue.setText(this.mContinueButtonText);
 
     }
 

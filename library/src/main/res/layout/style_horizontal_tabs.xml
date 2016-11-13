@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
@@ -13,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="?actionBarSize"
         android:background="@color/material_stepper_global"
-        app:theme="@style/Base.ThemeOverlay.AppCompat.Dark.ActionBar"/>
+        app:theme="@style/Base.ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -22,6 +21,7 @@
         android:layout_below="@+id/toolbar"
         android:orientation="vertical">
 
+
         <android.support.v7.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -29,29 +29,70 @@
             card_view:cardBackgroundColor="@color/material_stepper_top_bar"
             card_view:cardCornerRadius="0dp">
 
-            <HorizontalScrollView
-                android:id="@+id/steps"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:minHeight="72dp"
-                android:scrollbars="none">
+                android:orientation="vertical">
 
                 <LinearLayout
-                    android:id="@+id/stepTabs"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/stepperTitleWrapper"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:paddingLeft="12dp"
-                    android:paddingRight="12dp"/>
+                    android:orientation="vertical">
 
-            </HorizontalScrollView>
+
+                    <TextView
+                        android:id="@+id/stepperTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:fontFamily="sans-serif-light"
+                        android:gravity="center_horizontal"
+                        android:paddingBottom="8px"
+                        android:paddingTop="16px"
+                        android:text="@string/stepper_title"
+                        android:textColor="@color/material_stepper_bottom_bar_text"
+                        android:textSize="@dimen/material_stepper_bottombar_font" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/stepWrapper"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <HorizontalScrollView
+                        android:id="@+id/steps"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minHeight="72dp"
+                        android:scrollbars="none">
+
+                        <LinearLayout
+                            android:id="@+id/stepTabs"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingLeft="12dp"
+                            android:paddingRight="12dp" />
+
+                    </HorizontalScrollView>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
 
         </android.support.v7.widget.CardView>
 
         <com.github.fcannizzaro.materialstepper.widget.LockedViewPager
             android:id="@+id/stepPager"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent" />
 
     </LinearLayout>
 
@@ -78,7 +119,7 @@
                 android:padding="16dp"
                 android:text="@string/ms_prev"
                 android:textColor="@color/material_stepper_bottom_bar_text"
-                android:textSize="@dimen/material_stepper_bottombar_font"/>
+                android:textSize="@dimen/material_stepper_bottombar_font" />
 
             <Button
                 android:id="@+id/continueButton"
@@ -89,7 +130,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_margin="8dp"
                 android:text="@string/ms_continue"
-                android:textSize="@dimen/material_stepper_bottombar_font"/>
+                android:textSize="@dimen/material_stepper_bottombar_font" />
 
         </RelativeLayout>
 
@@ -101,13 +142,13 @@
             android:ellipsize="end"
             android:fontFamily="sans-serif"
             android:gravity="center_vertical"
+            android:lines="1"
             android:paddingBottom="16dp"
             android:paddingLeft="16dp"
             android:paddingRight="16dp"
             android:paddingTop="16dp"
-            android:lines="1"
             android:textColor="#fff"
-            android:textSize="@dimen/material_stepper_bottombar_font"/>
+            android:textSize="@dimen/material_stepper_bottombar_font" />
 
     </ViewSwitcher>
 
