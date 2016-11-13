@@ -1,6 +1,6 @@
 # Material Stepper
 
-[![](https://jitpack.io/v/fcannizzaro/material-stepper.svg)](https://jitpack.io/#fcannizzaro/material-stepper)
+[![](https://jitpack.io/v/stephenus/material-stepper.svg)](https://jitpack.io/#stephenus/material-stepper)
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Material%20Stepper-brightgreen.svg?style=flat)](http://android-arsenal.com/details/1/3162)
 [![git-card](http://goo.gl/2TUzYL)](http://fcannizzaro.github.io/git-card/get?user=fcannizzaro&repo=material-stepper)
 
@@ -25,7 +25,7 @@ Add the dependency
 
 ```gradle
 dependencies {
-   compile 'com.github.fcannizzaro:material-stepper:1.2.2'
+   compile 'com.github.stephenus:material-stepper:1.2.5'
 }
 ```
 
