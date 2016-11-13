@@ -5,8 +5,8 @@
     android:minHeight="48dp"
     android:orientation="vertical"
     android:paddingBottom="0dp"
-    android:paddingLeft="0dp"
-    android:paddingRight="0dp"
+    android:paddingLeft="12dp"
+    android:paddingRight="12dp"
     android:paddingTop="12dp">
 
     <RelativeLayout
@@ -35,6 +35,7 @@
                 android:layout_height="@dimen/material_stepper_step_circle"
                 android:background="@drawable/circle_bg"
                 android:scaleType="centerInside"
+                android:contentDescription="Tab completed"
                 android:src="@drawable/ic_done_white_18dp"
                 android:visibility="gone" />
 
@@ -46,7 +47,6 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/icon"
             android:layout_marginTop="8dp"
-            android:minWidth="96dp"
             android:orientation="vertical">
 
             <TextView
@@ -55,7 +55,6 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:alpha=".87"
-
                 android:fontFamily="sans-serif-medium"
                 android:textColor="@color/material_stepper_active_text"
                 android:textSize="@dimen/material_stepper_step_active_font" />
@@ -75,12 +74,13 @@
 
     <View
         android:id="@+id/divider"
-        android:layout_width="36dp"
+        android:layout_width="12dp"
         android:layout_height="@dimen/material_stepper_connector"
         android:layout_centerVertical="false"
-        android:layout_marginLeft="0dp"
+        android:layout_marginLeft="12dp"
         android:layout_marginStart="12dp"
         android:layout_marginTop="12dp"
+        android:visibility="invisible"
         android:layout_toEndOf="@+id/all"
         android:layout_toRightOf="@+id/all"
         android:background="@color/material_stepper_connector" />
