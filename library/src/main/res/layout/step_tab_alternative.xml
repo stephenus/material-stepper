@@ -46,6 +46,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/icon"
             android:layout_marginTop="8dp"
+            android:minWidth="96dp"
             android:orientation="vertical">
 
             <TextView
@@ -54,7 +55,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:alpha=".87"
-                android:fontFamily="sans-serifi-medium"
+
+                android:fontFamily="sans-serif-medium"
                 android:textColor="@color/material_stepper_active_text"
                 android:textSize="@dimen/material_stepper_step_active_font" />
 
@@ -73,7 +75,7 @@
 
     <View
         android:id="@+id/divider"
-        android:layout_width="48dp"
+        android:layout_width="36dp"
         android:layout_height="@dimen/material_stepper_connector"
         android:layout_centerVertical="false"
         android:layout_marginLeft="0dp"
