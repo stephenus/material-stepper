@@ -47,8 +47,8 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif-light"
                         android:gravity="center_horizontal"
-                        android:paddingBottom="8dp"
-                        android:paddingTop="16dp"
+                        android:paddingBottom="0dp"
+                        android:paddingTop="8dp"
                         android:text="@string/stepper_title"
                         android:textColor="@color/material_stepper_bottom_bar_text"
                         android:textSize="@dimen/material_stepper_bottombar_font" />
