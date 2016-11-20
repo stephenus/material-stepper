@@ -207,11 +207,11 @@ public class TabStepper extends BasePager implements View.OnClickListener {
                     if (position != mSteps.current()) {
                         updateDoneCurrent();
                         if (position - mSteps.current() < 0) {
-                            onPrevious();
+                            mSteps.getCurrent().onPrevious();
                         }
                         else if (position - mSteps.current() > 0)
                         {
-                            onNext();
+                            mSteps.getCurrent().onNext();
                         }
 
                     }
