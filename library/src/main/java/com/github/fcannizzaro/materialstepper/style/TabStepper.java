@@ -204,8 +204,18 @@ public class TabStepper extends BasePager implements View.OnClickListener {
 
                     boolean optional = mSteps.getCurrent().isOptional();
 
-                    if (position != mSteps.current())
+                    if (position != mSteps.current()) {
                         updateDoneCurrent();
+                        if (position - mSteps.current() < 0) {
+                            onPrevious();
+                        }
+                        else if (position - mSteps.current() > 0)
+                        {
+                            onNext();
+                        }
+
+                    }
+
 
                     if (!mLinear || optional || mLinearity.beforeDone(position)) {
                         mSteps.current(position);
@@ -252,16 +262,16 @@ public class TabStepper extends BasePager implements View.OnClickListener {
 
     @Override
     public void onPrevious() {
-        super.onPrevious();
         mSteps.getCurrent().onPrevious();
+        super.onPrevious();
         updateScrolling(mSteps.current() - 1);
     }
 
     @Override
     public void onClick(View view) {
         if (updateDoneCurrent()) {
-            onNext();
             mSteps.getCurrent().onNext();
+            onNext();
             updateScrolling(mSteps.current() + 1);
         } else
             onError();
