@@ -104,8 +104,6 @@ public class TabStepper extends BasePager implements View.OnClickListener {
         mStepTabs = (LinearLayout) mTabs.findViewById(R.id.stepTabs);
         mSwitch = (ViewSwitcher) findViewById(R.id.stepSwitcher);
         mError = (TextView) findViewById(R.id.stepError);
-        mStepperTitle = (TextView) findViewById(R.id.stepperTitle);
-        mStepperTitle.setText(this.mStepperTitleText);
         mPreviousButton = (TextView) findViewById(R.id.stepPrev);
         mPreviousButton.setText(this.mPreviousButtonText);
 
@@ -186,10 +184,10 @@ public class TabStepper extends BasePager implements View.OnClickListener {
         View view = getLayoutInflater().inflate(mTabAlternative ? R.layout.step_tab_alternative : R.layout.step_tab, mStepTabs, false);
         ((TextView) view.findViewById(R.id.step)).setText(String.valueOf(position + 1));
 
-        if (isOptional) {
-            view.findViewById(R.id.optional).setVisibility(View.VISIBLE);
-            ((TextView) view.findViewById(R.id.optional)).setText(optionalStr);
-        }
+//        if (isOptional) {
+//            view.findViewById(R.id.optional).setVisibility(View.VISIBLE);
+//            ((TextView) view.findViewById(R.id.optional)).setText(optionalStr);
+//        }
 
         if (position == mSteps.total() - 1)
             view.findViewById(R.id.divider).setVisibility(View.GONE);
@@ -215,8 +213,6 @@ public class TabStepper extends BasePager implements View.OnClickListener {
                         }
 
                     }
-
-
                     if (!mLinear || optional || mLinearity.beforeDone(position)) {
                         mSteps.current(position);
                         updateScrolling(position);
